@@ -1,21 +1,21 @@
-const mongoose = require ('mongoose');
-const db = require ('../models');
+// const mongoose = require ('mongoose');
+// const db = require ('../models');
 
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/Project3'
-);
+// mongoose.connect(
+//     process.env.MONGODB_URI || 'mongodb://localhost/Project3'
+// );
 
-const userSeed = [
+// const userSeed = [
 
-    {
-        userEmail: 'rob_wo@yahoo.com',
-        password: 'Password2'
-    },
+//     {
+//         userEmail: 'rob_wo@yahoo.com',
+//         password: 'Password2'
+//     },
 
-    {
-        userEmail: 'qtip@atcq.com',
-        password: 'Password1'
-    }
+//     {
+//         userEmail: 'qtip@atcq.com',
+//         password: 'Password1'
+//     }
 
 
 // var express = require('express');
@@ -63,4 +63,4 @@ const userSeed = [
 // module.exports = router
 
 
-]
+// ]

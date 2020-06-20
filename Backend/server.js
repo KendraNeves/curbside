@@ -1,27 +1,20 @@
 const express = require('express');
-const cors = require('cors');
 const mongoose = require('mongoose');
-const path = require('path');
-
-require('dotenv').config();
-
+const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
 
-app.use(express.static("public"));
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/credentials", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
-
-
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/listings", {
 });
 
 app.listen(PORT, function() {

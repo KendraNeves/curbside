@@ -1,5 +1,33 @@
-// const mongoose = require ('mongoose');
+const mongoose = require ('mongoose');
 // const db = require ('../models');
+
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema ({
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 18,
+        password: {
+            type: String,
+            required: true,
+            unique: true, 
+            trim: true,
+            minlength: 6
+    
+        }
+    }
+});
+ const User = mongoose.model('User', userSchema);
+
+ module.exports = User
+
+
+
+
+
 
 // mongoose.connect(
 //     process.env.MONGODB_URI || 'mongodb://localhost/Project3'

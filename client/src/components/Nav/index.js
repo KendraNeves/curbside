@@ -12,7 +12,7 @@ function NavBar(props) {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-    <Nav.Link href="/search">Search</Nav.Link>
+    <Nav.Link href="/upload">Upload</Nav.Link>
     <Nav.Link href="#"></Nav.Link>
     <Nav.Link href="/search">Search</Nav.Link>
   </Nav>

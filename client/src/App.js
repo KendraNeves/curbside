@@ -11,7 +11,7 @@ function App() {
     <NavBar/>,
     <BrowserRouter>
     <main>
-      <Route exact path="/" component={Listings} />
+      <Route exact path={["/", "/homepage"]} component={Listings} />
       <Route exact path="/map" component={Listings} />
       <Route exact path="/search" component={Listings} />
       <Route exact path="/signin" component={Signin} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route} from "react-router-dom";
+import Homepage from "./pages/Homepage";
 import Listings from "./pages/Search";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -11,7 +12,7 @@ function App() {
     <NavBar/>,
     <BrowserRouter>
     <main>
-      <Route exact path={["/", "/homepage"]} component={Listings} />
+      <Route exact path={["/", "/homepage"]} component={Homepage} />
       <Route exact path="/map" component={Listings} />
       <Route exact path="/search" component={Listings} />
       <Route exact path="/signin" component={Signin} />

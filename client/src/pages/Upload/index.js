@@ -6,7 +6,7 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utilities/API";
 import Nav from '../../components/Nav';
 import "../../App.css";
-function Listings() {
+function Upload() {
 
   // Initialize books as an empty array
     const [listings, setListings] = useState([]);
@@ -72,6 +72,7 @@ function Listings() {
             </form>
           </Col>
           <Col size="md-6 sm-12">
+            
             {listings.length ? (
               <List>
                 {listings.map(listing => {
@@ -96,4 +97,4 @@ function Listings() {
     );
   }
 
-export default Listings;
+export default Upload;

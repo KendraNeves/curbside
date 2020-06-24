@@ -1,0 +1,23 @@
+.navbar-brand {
+  color: black;
+  font-family: "Titillium Web";
+  font-size: 35px;
+  letter-spacing: 5px;
+  padding: .5rem; 
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.links {
+  color: black;
+  font-family: "Titillium Web";
+  letter-spacing: 3px;
+  padding-right: 4rem;
+}
+
+.links:hover {
+  color: white;
+  text-decoration: none;
+}

@@ -1,12 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route} from "react-router-dom";
-import Homepage from "./pages/Search";
+import Homepage from "./pages/Homepage";
+import Search from "./pages/Search";
 import Upload from "./pages/Upload";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-
-import Upload from "./pages/Upload";  
-
 
 function App() {
   return(

@@ -5,19 +5,19 @@ import {Link} from "react-router-dom";
 
 function Signup() {
   return(
-    <div className="signup">
+    <div className="log">
       <header className="log-header">
         <a className="log-brand" href="/">CURBSIDE</a>
       </header>
 
       <div className="container-fluid">
         <div className="row">
-          <div className="col-6 img-cont">
+          <div className="col-6">
             <img src={signup_img} alt="boxes toppled over"></img>
           </div>
-          <div className="col-6 signup-cont">
+          <div className="col-6">
             <div className="row">
-              <h2 className="signup-form-title">CREATE AN ACCOUNT</h2>
+              <h2 className="log-title">CREATE AN ACCOUNT</h2>
             </div>
             <div className="row">
               <form>

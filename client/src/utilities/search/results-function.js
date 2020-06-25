@@ -2,9 +2,8 @@ import API from "../API";
 import React, { Component } from "react"
 import SearchForm from "./search-function"
 import TableHeader from "./table-header";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
+import { Col, Row, Container } from '../../components/Grid/index';
+import "../../App.css";
 
 
 class Results extends Component {
@@ -48,16 +47,21 @@ class Results extends Component {
     render() {
         return (
             <div>
+    <Container fluid>
+        <Row>
+            <Col size="md-3 sm-12">
                 <SearchForm
                     listing={this.state.listings}
                     handleSearch={this.handleSearch}
                     handleInputChange={this.handleInputChange} />
-                      <Container fluid>
+            </Col>
+        <Col size="md-9">
           <thead className="">
               <Row className=" sticky-top">
-                  <Col className="hover-pointer heading" onClick={this.sortByName}>Name</Col>
+                  <Col size="md-12" className="hover-pointer heading" onClick={this.sortByName}>Date Added</Col>
               </Row>
           </thead>
+          {this.state.listings.length ? (
           <tbody className="">
               {this.state.listingSort.map(listing => (
                   <Row key={listing._id} className="">
@@ -65,7 +69,12 @@ class Results extends Component {
                   </Row>
               ))}
           </tbody>
-      </Container >
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
+          </Col>
+          </Row>
+      </Container>
             </div >
         )
     }

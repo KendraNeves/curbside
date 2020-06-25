@@ -12,10 +12,10 @@ function Signup() {
 
       <div className="container-fluid">
         <div className="row">
-          <div className="col-6">
+          <div className="col-6 img-cont">
             <img src={signup_img} alt="boxes toppled over"></img>
           </div>
-          <div className="col-6">
+          <div className="col-6 signup-cont">
             <div className="row">
               <h2 className="signup-form-title">CREATE AN ACCOUNT</h2>
             </div>
@@ -27,8 +27,9 @@ function Signup() {
                   <div className="form-group">
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
                   </div>
-                  <button type="submit" className="btn btn-primary">SIGN UP</button>
-                  <Link to="/signin">SIGN IN</Link>
+                  <button type="submit" className="btn">SIGN UP</button>
+                  <br></br>
+                  <Link id="signin-link" to="/signin">SIGN IN</Link>
               </form>
             </div>
           </div>

@@ -1,10 +1,7 @@
-body > #root > div {
-  height: 100vh;
-}
-
 .signup {
   background-color: #fdf5e6;
-  height: 100%;
+  padding-bottom: 0;
+  height: 100vh;
 }
 
 .log-brand {
@@ -30,13 +27,31 @@ body > #root > div {
 
 img {
   max-width: 100%;
-  max-height: 100%;
-  display: block;
 }
 
 .signup-form-title {
   font-family: "Titillium Web";
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   color: #8a9748;
-  text-align: center;
+}
+
+.btn {
+  background-color: #738276	;
+  border: none;
+  color: white;
+  font-family: "Titillium Web";
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+
+#signin-link {
+  color: #610c04;
+  font-family: "Titillium Web";
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+#signin-link:hover {
+  color: #a91b0d;
+  text-decoration: none;
 }

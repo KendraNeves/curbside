@@ -1,6 +1,10 @@
+body > #root > div {
+  height: 100vh;
+}
+
 .signup {
   background-color: #fdf5e6;
-  padding: 0;
+  height: 100%;
 }
 
 .log-brand {
@@ -34,4 +38,5 @@ img {
   font-family: "Titillium Web";
   letter-spacing: 3px;
   color: #8a9748;
+  text-align: center;
 }

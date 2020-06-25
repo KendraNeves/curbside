@@ -1,0 +1,37 @@
+.signup {
+  background-color: #fdf5e6;
+  padding: 0;
+}
+
+.log-brand {
+  color: black;
+  font-family: "Titillium Web";
+  font-size: 35px;
+  letter-spacing: 5px;
+  padding: .5rem;
+}
+
+.log-brand:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.log-header {
+  margin-bottom: 1rem;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.signup-form-title {
+  font-family: "Titillium Web";
+  letter-spacing: 3px;
+  color: #8a9748;
+}

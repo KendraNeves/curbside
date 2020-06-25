@@ -6,12 +6,6 @@ import Upload from "./pages/Upload";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> master
 function App() {
   return(
     <BrowserRouter>

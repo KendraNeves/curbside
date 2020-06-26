@@ -5,12 +5,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { BrowserRouter, Route } from 'react-router-dom';
+import "./style.css"
 
 function NavBar(props) {
   return (
     <header className="navigation m-4">
       <Navbar collapseOnSelect expand="lg" bg="custom-nav" >
-        <Navbar.Brand className="p-3" href="/">Curbside</Navbar.Brand>
+        <Navbar.Brand className="p-2" href="/">Curbside</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <BrowserRouter >
@@ -23,7 +24,7 @@ function NavBar(props) {
             </Nav>
             <Nav>
               <Nav.Link className="mr-2" href="/signin">Sign In</Nav.Link>
-              <Nav.Link className="mr-5" href="/signup">Sign Up</Nav.Link>
+              <Nav.Link className="" href="/signup">Sign Up</Nav.Link>
             </Nav>
           </BrowserRouter>
         </Navbar.Collapse>

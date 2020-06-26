@@ -13,7 +13,7 @@
     "install": "cd ../client && npm install",
     "build": "cd ../client && npm run build",
     "heroku-postbuild": "npm run build",
-    "test": "concurrently \"nodemon --ignore '../client/*'\"npm run client-test\"" 
+    "test": "concurrently \"nodemon --ignore '../client/*'\" \"npm run client-test\""
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,16 @@
+.form-control{
+    margin: 5px;
+    background-color: #f3f3f3;
+}
+.btn {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.btn-custom {
+    background-color: #7a4a1d;
+    color: #fff;
+}
+.btn-custom:hover {
+    background-color: #613812;
+    color: #fff;
+}

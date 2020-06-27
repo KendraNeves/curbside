@@ -24,7 +24,8 @@ const Categories = [
        listing_title: "",
        listing_description:"",
        listing_condition: "",
-       listing_location: ""
+       listing_location: "",
+       listing_category:""
    });
    const onCategoriesSelectChange = (event) => {
      setCatergoriesValue(event.currentTarget.value)
@@ -109,9 +110,9 @@ const Categories = [
                     <Input onChange={handleInputChange} name="listing_description" placeholder="listing description" value={formObject.listing_description}/>
                     <Input onChange={handleInputChange} name="listing_condition" placeholder="condition (used, new, etc.)" value={formObject.listing_condition}/>
                     <Input onChange={handleInputChange} name="listing_location" placeholder="city, state" value={formObject.listing_location}/>
+                    <label>Item Category</label>
                     <Form.Group controlId="exampleForm.ControlSelect1">
                       <InputGroup.Prepend>
-                        <InputGroup.Text>item type:</InputGroup.Text>
                           <Form.Control as="select" onChange={onCategoriesSelectChange}>
                             {Categories.map(item => (
                             <option key={item.key} value={formObject.CategoriesValue}>{item.value}</option>

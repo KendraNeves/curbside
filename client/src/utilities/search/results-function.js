@@ -1,10 +1,12 @@
 import API from "../API";
 import React, { Component } from "react"
 import SearchForm from "./search-function"
-import TableHeader from "./table-header";
-import { Col, Row, Container } from '../../components/Grid/index';
+import { Col } from '../../components/Grid/index';
+import Container from 'react-bootstrap/Container';
+import Modal from 'react-bootstrap/Modal';
+import Row from 'react-bootstrap/Row';
 import "../../App.css";
-
+import AppModal from '../../components/Modal';
 
 class Results extends Component {
 
@@ -55,17 +57,23 @@ class Results extends Component {
                     handleSearch={this.handleSearch}
                     handleInputChange={this.handleInputChange} />
             </Col>
-        <Col size="md-9">
+        <Col size="md-9 sm-12">
           <thead className="">
               <Row className=" sticky-top">
-                  <Col size="md-12" className="hover-pointer heading" onClick={this.sortByName}>Date Added</Col>
+                  <h2 className="hover-pointer heading" onClick={this.sortByName}>Date Added</h2>
               </Row>
           </thead>
           {this.state.listings.length ? (
           <tbody className="">
               {this.state.listingSort.map(listing => (
+                  console.log(listing),
                   <Row key={listing._id} className="">
-                      <Col>{listing.listing_title}  </Col>
+                      <Col  size="md-12">{listing.listing_title}</Col>   
+                      <AppModal
+                      content={listing.listing_title}
+                      description={listing.listing_description}
+                      
+                      />     
                   </Row>
               ))}
           </tbody>

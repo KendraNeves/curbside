@@ -1,0 +1,58 @@
+.log {
+  background-color: #fdf5e6;
+  padding-bottom: 0;
+  height: 100vh;
+}
+
+.log-brand {
+  color: black;
+  font-family: "Titillium Web";
+  font-size: 35px;
+  letter-spacing: 5px;
+  padding: .5rem;
+}
+
+.log-brand:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.log-header {
+  margin-bottom: 1rem;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.log-title {
+  font-family: "Titillium Web";
+  letter-spacing: 5px;
+  color: #8a9748;
+}
+
+.btn {
+  background-color: #738276	;
+  border: none;
+  color: white;
+  font-family: "Titillium Web";
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+
+#signin-link {
+  color: #610c04;
+  font-family: "Titillium Web";
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+#signin-link:hover {
+  color: #a91b0d;
+  text-decoration: none;
+}

@@ -51,17 +51,20 @@ class Results extends Component {
                 <SearchForm
                     listing={this.state.listings}
                     handleSearch={this.handleSearch}
-                    handleInputChange={this.handleInputChange} />
+                    // handleInputChange={this.handleInputChange} want to remove to stop live search
+                    />
                       <Container fluid>
           <thead className="">
               <Row className=" sticky-top">
                   <Col className="hover-pointer heading" onClick={this.sortByName}>Name</Col>
+                  <Col className="hover-pointer heading" onClick={this.sortByName}>Description</Col>
               </Row>
           </thead>
           <tbody className="">
               {this.state.listingSort.map(listing => (
                   <Row key={listing._id} className="">
                       <Col>{listing.listing_title}  </Col>
+                      <Col>{listing.listing_description}</Col>
                   </Row>
               ))}
           </tbody>
@@ -89,8 +92,10 @@ class Results extends Component {
     }
     handleSearch = event => {
         event.preventDefault();
+        event.persist()
         const { listings, search } = this.state;
-        const UserInput = event.target.value;
+        const userInput = event.target.value;
+        console.log(event)
         const listingSort = listings.filter(listing => listing.listing_title.toLowerCase().includes(search.toLowerCase()));
 
         this.setState({

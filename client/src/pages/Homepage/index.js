@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-// 
-=======
 import React from "react";
 import Homepage_Nav from "../../components/Homepage_Nav";
 import "./style.css";
@@ -16,4 +13,3 @@ function Homepage() {
 }
 
 export default Homepage;
->>>>>>> master

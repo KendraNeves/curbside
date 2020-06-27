@@ -55,12 +55,14 @@ class Results extends Component {
                 <SearchForm
                     listing={this.state.listings}
                     handleSearch={this.handleSearch}
+
                     handleInputChange={this.handleInputChange} />
             </Col>
         <Col size="md-9 sm-12">
           <thead className="">
               <Row className=" sticky-top">
                   <h2 className="hover-pointer heading" onClick={this.sortByName}>Date Added</h2>
+
               </Row>
           </thead>
           {this.state.listings.length ? (
@@ -68,6 +70,7 @@ class Results extends Component {
               {this.state.listingSort.map(listing => (
                   console.log(listing),
                   <Row key={listing._id} className="">
+
                       <CardListing
                       listingTitle={listing.listing_title}
                       listingDescription= {listing.listing_description}
@@ -79,6 +82,7 @@ class Results extends Component {
                       description={listing.listing_description}
                       location={listing.listing_location}
                       />}/>
+
                   </Row>
               ))}
           </tbody>
@@ -111,8 +115,10 @@ class Results extends Component {
     }
     handleSearch = event => {
         event.preventDefault();
+        event.persist()
         const { listings, search } = this.state;
-        const UserInput = event.target.value;
+        const userInput = event.target.value;
+        console.log(event)
         const listingSort = listings.filter(listing => listing.listing_title.toLowerCase().includes(search.toLowerCase()));
 
         this.setState({

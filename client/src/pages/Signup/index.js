@@ -49,12 +49,12 @@ class Signup extends Component {
             <div className="col-6">
               <h2 className="log-title">CREATE AN ACCOUNT</h2>
               <br></br>
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"></input>
+                  <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email..." value={this.state.email} onChange={this.handleChange}></input>
                 </div>
                 <div className="form-group">
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                  <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password..." value={this.state.password} onChange={this.handleChange}></input>
                 </div>
                 <button type="submit" className="btn">SIGN UP</button>
                 <br></br>

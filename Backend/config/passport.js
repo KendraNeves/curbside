@@ -1,9 +1,9 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const JwtStrategy = require('passport-jwt');
+const JwtStrategy = require('passport-jwt').Strategy;
 const User = require('../models/user');
 
-// JWT
+// JWT cE();-Extracts JWT Cookie Token to verify user
 const cookieExtractor = req => {
     let token = null;
     if(req && req.cookies){
@@ -12,11 +12,13 @@ const cookieExtractor = req => {
     return token;
 }
 
-// authorization
+// JWT authorization - Protects endpoints from unauthorized access
 passport.use(new JwtStrategy({
     jwtFromRequest: cookieExtractor,
+    // Verifies if token is legit
     secretOrKey: "Curbside"
 },(payload,done)=>{
+    // Checks if the user exists
     User.findById({_id: payload.sub},(err,user)=>{
         if(err)
             return done(err,false);
@@ -28,13 +30,18 @@ passport.use(new JwtStrategy({
 }));
 
 
+<<<<<<< HEAD
 // CONFIGURATION
 // authenticated local strategy using username and passwor
+=======
+// LOGIN CONFIGURATION
+// authenticated local strategy using verify callback, username and password, and done function
+>>>>>>> 4233d39aa1f218edea57c4f008ba6b804829cd25
 passport.use(new LocalStrategy((username,password,done)=> {
     User.findOne({username},(err,user)=>{
         // something went wrong with database
         if(err)
-            return done(err);
+            return done(err, { message: 'Database is unable.' });
         // If no user exist
         if(!user)
             return done(null, false, { message: 'Incorrect password.' });

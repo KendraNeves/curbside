@@ -19,7 +19,7 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/listings", {
 });
 
-const userRouter = require('./routes/User');
+const userRouter = require('./routes/user');
 app.use('/user', userRouter);
 
 app.listen(PORT, function() {

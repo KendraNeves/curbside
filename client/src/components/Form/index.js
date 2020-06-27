@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 // This file exports the Input, TextArea, and FormBtn components
 
@@ -22,7 +23,7 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <Button {...props} style={{ float: "right", marginBottom: 10 }} variant="primary">{props.children}</Button>
+    <Button {...props} style={{ float: "right", marginBottom: 10 }} variant="custom">{props.children}</Button>
       
   );
 }

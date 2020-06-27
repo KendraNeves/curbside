@@ -28,9 +28,8 @@ passport.use(new JwtStrategy({
 }));
 
 
-
-// authenticated local strategy using username and password
-
+// CONFIGURATION
+// authenticated local strategy using username and passwor
 passport.use(new LocalStrategy((username,password,done)=> {
     User.findOne({username},(err,user)=>{
         // something went wrong with database
@@ -38,7 +37,7 @@ passport.use(new LocalStrategy((username,password,done)=> {
             return done(err);
         // If no user exist
         if(!user)
-            return done(null, false);
+            return done(null, false, { message: 'Incorrect password.' });
         // checks if password is correct
         user.comparePassword(password,done);
     })

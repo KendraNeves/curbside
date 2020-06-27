@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Homepage_Nav from "../../components/Homepage_Nav";
+import ImageUpload from "../../components/ImageBox/imageUpload";
 import "./style.css";
+
 
 // Function for dropdown catergories
 
@@ -47,7 +49,7 @@ const onCategoriesSelectChange = (event) => {
 
       <form onSubmit>
         
-
+        <ImageUpload />
 
         <br/>
         <br/>

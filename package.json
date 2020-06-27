@@ -6,33 +6,40 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "client": "cd ../client && npm run start",
-    "start:dev": "concurrently \"nodemon --ignore '../client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "seed": "node scripts/itemsSeed.js",
-    "install": "cd ../client && npm install",
-    "build": "cd ../client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "concurrently": "^4.1.0"
+    "nodemon": "^2.0.4"
+    
   },
   "dependencies": {
+<<<<<<< HEAD:Backend/package.json
     "@react-google-maps/api": "^1.9.7",
+=======
+>>>>>>> robdeploy:package.json
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
+<<<<<<< HEAD:Backend/package.json
     "css-loader": "^3.6.0",
+=======
+>>>>>>> robdeploy:package.json
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
+    "mongo": "^0.1.0",
     "mongoose": "^5.9.19",
     "multer": "^1.4.2",
     "passport": "^0.4.1",

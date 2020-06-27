@@ -49,10 +49,10 @@ class Signin extends Component {
               <h2 className="log-title">SIGN IN</h2>
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"></input>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email..." value={this.state.email} onChange={this.handleChange}></input>
                   </div>
                   <div className="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password..." value={this.state.password} onChange={this.handleChange}></input>
                   </div>
                   <button type="submit" className="btn">LOG IN</button>
                   <br></br>

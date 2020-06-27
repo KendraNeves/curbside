@@ -18,6 +18,8 @@ npm i to backend folder
 
 npm i axios react-bootstrap bootstrap to client folder
 
+npm i @react-google-maps/api  &  react-geocode  in client/package.json
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />

@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
-import signup_img from "../../assets/images/img1.png";
 import {Link} from "react-router-dom";
 
-// function Signup() {
-//   
-// }
 class Signup extends Component {
   constructor() {
     super();

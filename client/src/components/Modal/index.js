@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import "../../App.css";
+import "./style.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -20,14 +21,21 @@ function AppModal(props) {
         </Modal.Header>
         <Modal.Body className="show-grid">
           <Container>
-          <p>{props.description}</p>
+            <Col  size="md-6">
+                <p>{props.description}</p>
+            </Col>
+            <Row>
+            <Col  size="md-12">
+                <p>{props.location}</p>
+            </Col>
+            </Row>
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => setModalShow(false)}>Close</Button>
+          <Button className="btn-custom" variant="custom" onClick={() => setModalShow(false)}>Close</Button>
         </Modal.Footer>
       </Modal>
-        <Button variant="primary" onClick={() => setModalShow(true)}>
+        <Button className="btn-custom" variant="custom" onClick={() => setModalShow(true)}>
           View
         </Button>
     </>);

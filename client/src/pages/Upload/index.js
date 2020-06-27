@@ -5,6 +5,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utilities/API";
 import Nav from '../../components/Nav';
+import ImageUpload from "../../components/ImageBox/imageUpload";
 import "../../App.css";
 import './style.css';
 function Upload() {
@@ -58,43 +59,55 @@ function Upload() {
     }
     return (
       <div className="App">
-      <head>
-      </head>
-      <Nav />
-      <Container fluid>
-        <Row>
-        <Col size="md-6 sm-12">
-            
-            {listings.length ? (
-              <List>
-                {listings.map(listing => {
-                  return (
-                  <ListItem key={listing._id}>
-                    <a href={"/listings/" + listing._id}>
-                      <strong>
-                        {listing.listing_title} in {listing.listing_location}
-                      </strong>
-                    </a>
-                    <DeleteBtn onClick={() => deleteListing(listing._id)}/>
-                  </ListItem>
-                )})}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-          <Col size="md-6 input">
-            <form>
-              <Input onChange={handleInputChange} name="listing_title" placeholder="listing title" value={formObject.listing_title}/>
-              <Input onChange={handleInputChange} name="listing_description" placeholder="listing description" value={formObject.listing_description}/>
-              <Input onChange={handleInputChange} name="listing_condition" placeholder="condition (used, new, etc.)" value={formObject.listing_condition}/>
-              <Input onChange={handleInputChange} name="listing_location" placeholder="city, state" value={formObject.listing_location}/>
-              <FormBtn onClick={handleFormSubmit}> Submit Listing</FormBtn>
-            </form>
-          </Col>
+        <Nav />
+        <div style={{maxWidth:'1200px', margin:'2rem auto'}}>
+          <div style={{ textAlign:'center', marginBottom:'2rem'}}>
+            <h2>Upload Item</h2>
+          </div>
 
-        </Row>
-      </Container>
+          <Container fluid>
+          <Row>
+          <Col size="md-6 sm-12">
+              
+              {listings.length ? (
+                <List>
+                  {listings.map(listing => {
+                    return (
+                    <ListItem key={listing._id}>
+                      <a href={"/listings/" + listing._id}>
+                        <strong>
+                          {listing.listing_title} in {listing.listing_location}
+                        </strong>
+                      </a>
+                      <DeleteBtn onClick={() => deleteListing(listing._id)}/>
+                    </ListItem>
+                  )})}
+                </List>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+            </Col>
+            <Col size="md-6 input">
+              <form>
+
+                <ImageUpload />
+                <br/>
+                <br/>
+
+                <Input onChange={handleInputChange} name="listing_title" placeholder="listing title" value={formObject.listing_title}/>
+                <Input onChange={handleInputChange} name="listing_description" placeholder="listing description" value={formObject.listing_description}/>
+                <Input onChange={handleInputChange} name="listing_condition" placeholder="condition (used, new, etc.)" value={formObject.listing_condition}/>
+                <Input onChange={handleInputChange} name="listing_location" placeholder="city, state" value={formObject.listing_location}/>
+                <FormBtn onClick={handleFormSubmit}> Submit Listing</FormBtn>
+              </form>
+            </Col>
+
+          </Row>
+          </Container>
+   
+        </div>
+       
+     
       </div>
     );
   }

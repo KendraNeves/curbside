@@ -21,6 +21,7 @@ const [NameValue, setNameValue] = useState("")
 const [DescriptionValue, setDescriptionValue] = useState("")
 const [LocationValue, setLocationValue] = useState("")
 const [CategoriesValue, setCatergoriesValue] = useState(1)
+const [Images, setImages] = useState([])
 
 //Onchange event every section of the form
 const onNameChange = (event) => {
@@ -38,6 +39,10 @@ const onLocationChange = (event) => {
 const onCategoriesSelectChange = (event) => {
   setCatergoriesValue(event.currentTarget.value)
 }
+
+const updateImages = (newImages) => {
+  setImages(newImages)
+}
   return (
     <div className="uploadpage">
       <Homepage_Nav />
@@ -49,7 +54,7 @@ const onCategoriesSelectChange = (event) => {
 
       <form onSubmit>
         
-        <ImageUpload />
+        <ImageUpload  refreshFunction={updateImages} />
 
         <br/>
         <br/>

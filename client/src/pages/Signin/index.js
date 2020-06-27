@@ -47,7 +47,7 @@ class Signin extends Component {
             </div>
             <div className="col-6">
               <h2 className="log-title">SIGN IN</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"></input>
                   </div>

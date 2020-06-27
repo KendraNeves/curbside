@@ -3,10 +3,10 @@ import React, { Component } from "react"
 import SearchForm from "./search-function"
 import { Col } from '../../components/Grid/index';
 import Container from 'react-bootstrap/Container';
-import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import "../../App.css";
 import AppModal from '../../components/Modal';
+import CardListing from '../../components/Card';
 
 class Results extends Component {
 
@@ -68,12 +68,17 @@ class Results extends Component {
               {this.state.listingSort.map(listing => (
                   console.log(listing),
                   <Row key={listing._id} className="">
-                      <Col  size="md-12">{listing.listing_title}</Col>   
+                      <CardListing
+                      listingTitle={listing.listing_title}
+                      listingDescription= {listing.listing_description}
+                      location={listing.listing_location}
+                      modalButton={
+                      
                       <AppModal
                       content={listing.listing_title}
                       description={listing.listing_description}
-                      
-                      />     
+                      location={listing.listing_location}
+                      />}/>
                   </Row>
               ))}
           </tbody>

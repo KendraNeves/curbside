@@ -6,6 +6,7 @@ const listingSchema = new Schema({
   listing_description: { type: String, required: true },
   listing_condition: String,
   listing_location: String,
+  CategoriesValue: String,
   date: { type: Date, default: Date.now }
 });
 

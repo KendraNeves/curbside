@@ -14,6 +14,7 @@ const itemsSeed = [
     listing_description:  "used glass coffee table. some scratches",
     listing_condition: "used", 
     listing_location: "Baltimore, MD",
+    CategoriesValue: "Furniture",
     date: new Date(Date.now())
   },
   {
@@ -21,6 +22,7 @@ const itemsSeed = [
     listing_description:  "Barely used white office desk with drawer",
     listing_condition: "Almost New", 
     listing_location: "Baltimore, MD",
+    CategoriesValue: "Furniture",
     date: new Date(Date.now())
   },
   {
@@ -28,6 +30,7 @@ const itemsSeed = [
     listing_description:  "super used, non-working television for parts",
     listing_condition: "used", 
     listing_location: "Baltimore, MD",
+    CategoriesValue: "Furniture",
     date: new Date(Date.now())
   },
   {
@@ -35,6 +38,7 @@ const itemsSeed = [
     listing_description:  "a collection of gently used men's sweaters",
     listing_condition: "almost new", 
     listing_location: "Baltimore, MD",
+    CategoriesValue: "Furniture",
     date: new Date(Date.now())
   }
 ];

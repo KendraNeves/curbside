@@ -6,7 +6,7 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utilities/API";
 import Nav from '../../components/Nav';
 import "../../App.css";
-import { GoogleMap } from '@react-google-maps/api';
+import './style.css';
 function Upload() {
 
   // Initialize books as an empty array
@@ -63,16 +63,7 @@ function Upload() {
       <Nav />
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <form>
-              <Input onChange={handleInputChange} name="listing_title" placeholder="listing title" value={formObject.listing_title}/>
-              <Input onChange={handleInputChange} name="listing_description" placeholder="listing description" value={formObject.listing_description}/>
-              <Input onChange={handleInputChange} name="listing_condition" placeholder="condition (used, new, etc.)" value={formObject.listing_condition}/>
-              <Input onChange={handleInputChange} name="listing_location" placeholder="city, state" value={formObject.listing_location}/>
-              <FormBtn onClick={handleFormSubmit}> Submit Listing</FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
+        <Col size="md-6 sm-12">
             
             {listings.length ? (
               <List>
@@ -92,6 +83,16 @@ function Upload() {
               <h3>No Results to Display</h3>
             )}
           </Col>
+          <Col size="md-6 input">
+            <form>
+              <Input onChange={handleInputChange} name="listing_title" placeholder="listing title" value={formObject.listing_title}/>
+              <Input onChange={handleInputChange} name="listing_description" placeholder="listing description" value={formObject.listing_description}/>
+              <Input onChange={handleInputChange} name="listing_condition" placeholder="condition (used, new, etc.)" value={formObject.listing_condition}/>
+              <Input onChange={handleInputChange} name="listing_location" placeholder="city, state" value={formObject.listing_location}/>
+              <FormBtn onClick={handleFormSubmit}> Submit Listing</FormBtn>
+            </form>
+          </Col>
+
         </Row>
       </Container>
       </div>

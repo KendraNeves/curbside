@@ -1,6 +1,6 @@
 export default {
-    login : user =>{
-        return fetch('/user/login', {
+    signin : user =>{
+        return fetch('/user/signin', {
             method : 'post',
             body : JSON.stringify(user),
             headers : {
@@ -20,11 +20,13 @@ export default {
                 .then(data => data)
         })
     },
+
     signout : ()=>{
         return fetch('/user/signout')
                 .then(res => res.json())
                 .then(data => data)
     },
+    
     isAuthenticated : ()=>{
         return fetch('/user/authenticated')
                 .then(res=>{

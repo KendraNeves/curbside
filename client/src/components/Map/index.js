@@ -12,18 +12,13 @@ const containerStyle = {
   height: '400px'
 };
 
-const center = {
-  lat: 69,
-  lng: -76
-};
-
 export default class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
       center: {
-        lat: 0,
-        lng: 0
+        lat: 39.2904,
+        lng: -76.6122
       },
       address: ""
     };

@@ -4,6 +4,7 @@ import Map from '../../../components/Map/index';
 import NavBar from '../../../components/Nav';
 import API from '../../../utilities/API';
 import listedItemData from './../dummy-json';
+import { Row, Col } from "react-bootstrap";
 
 class ListedItem extends Component {
   constructor(props) {
@@ -29,13 +30,17 @@ class ListedItem extends Component {
     return (
       <>
         <NavBar />
-        <h1>{this.state.listing_title}</h1>
-        <Image src={process.env.PUBLIC_URL + "/images/brown-couch.jpg"} fluid />
-        <p>{this.state.listing_description}</p>
-
-
-
-        <Map />
+        <Row>
+          <Col md={6}></Col>
+          <Col sm={12} md={6}><h1>{this.state.listing_title}</h1></Col>
+        </Row>
+        <Row>
+          <Image width={400} src={process.env.PUBLIC_URL + "/images/brown-couch.jpg"} fluid />
+          <p>{this.state.listing_description}</p>
+        </Row>
+        <Row>
+          <Map />
+        </Row>
       </>
 
     );

@@ -40,7 +40,7 @@ class ListedItem extends Component {
           <p>{this.state.listing_description}</p>
         </Row>
         <Row>
-          <Map />
+          <Map latlong={this.state.listing_latlong} />
         </Row>
       </>
     );

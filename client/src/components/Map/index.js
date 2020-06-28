@@ -16,7 +16,7 @@ export default class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      center: {
+      center: props.latlong || {
         lat: 39.2904,
         lng: -76.6122
       },

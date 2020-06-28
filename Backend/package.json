@@ -7,13 +7,11 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "client": "cd ../client && npm run start",
-    "client-test": "cd ../client && npm test",
     "start:dev": "concurrently \"nodemon --ignore '../client/*'\" \"npm run client\"",
     "seed": "node scripts/itemsSeed.js",
     "install": "cd ../client && npm install",
     "build": "cd ../client && npm run build",
-    "heroku-postbuild": "npm run build",
-    "test": "concurrently \"nodemon --ignore '../client/*'\" \"npm run client-test\""
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",

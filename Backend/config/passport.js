@@ -30,13 +30,8 @@ passport.use(new JwtStrategy({
 }));
 
 
-<<<<<<< HEAD
-// CONFIGURATION
-// authenticated local strategy using username and passwor
-=======
 // LOGIN CONFIGURATION
 // authenticated local strategy using verify callback, username and password, and done function
->>>>>>> 4233d39aa1f218edea57c4f008ba6b804829cd25
 passport.use(new LocalStrategy((username,password,done)=> {
     User.findOne({username},(err,user)=>{
         // something went wrong with database

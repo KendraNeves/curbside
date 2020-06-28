@@ -21,10 +21,7 @@
     "concurrently": "^4.1.0"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@react-google-maps/api": "^1.9.7",
->>>>>>> victoriaUPdate
     "axios": "^0.18.0",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",

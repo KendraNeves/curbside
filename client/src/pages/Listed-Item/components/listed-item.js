@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from "react-bootstrap"
 import Map from '../../../components/Map/index';
-import NavBar from '../../../components/Nav';
+import Nav from '../../../components/Nav';
 import API from '../../../utilities/API';
 import listedItemData from './../dummy-json';
 import { Row, Col } from "react-bootstrap";
@@ -16,23 +16,24 @@ class ListedItem extends Component {
       listing_location: "",
       listing_latlong: null
     };
-    // TODO: How does listing_id get passed into this component?
-    // API.getListing(props.listing_id).then((results) => {
-    //   this.setState(...results);
-    // });
 
     // TODO: This is just a test
-    this.state = listedItemData[0];
+    // this.state = listedItemData[0];
   }
 
-  state = {}
+  componentDidMount() {
+    API.getListing(this.props.listing_id).then((results) => {
+      this.setState(results.data);
+    });
+  }
+
   render() {
     return (
       <>
-        <NavBar />
+        <Nav />
         <Row>
           <Col md={6}></Col>
-          <Col sm={12} md={6}><h1>{this.state.listing_title}</h1></Col>
+          <Col sm={12} md={6}><h1 className={"text-center"}>{this.state.listing_title}</h1></Col>
         </Row>
         <Row>
           <Image width={400} src={process.env.PUBLIC_URL + "/images/brown-couch.jpg"} fluid />
@@ -42,7 +43,6 @@ class ListedItem extends Component {
           <Map />
         </Row>
       </>
-
     );
   }
 }

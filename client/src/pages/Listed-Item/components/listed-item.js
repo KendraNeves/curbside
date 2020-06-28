@@ -3,6 +3,7 @@ import { Image } from "react-bootstrap"
 import Map from '../../../components/Map/index';
 import NavBar from '../../../components/Nav';
 import API from '../../../utilities/API';
+import listedItemData from './../dummy-json';
 
 class ListedItem extends Component {
   constructor(props) {
@@ -15,9 +16,12 @@ class ListedItem extends Component {
       listing_latlong: null
     };
     // TODO: How does listing_id get passed into this component?
-    API.getListing(props.listing_id).then((results) => {
-      this.setState(...results);
-    });
+    // API.getListing(props.listing_id).then((results) => {
+    //   this.setState(...results);
+    // });
+
+    // TODO: This is just a test
+    this.state = listedItemData[0];
   }
 
   state = {}
@@ -25,9 +29,9 @@ class ListedItem extends Component {
     return (
       <>
         <NavBar />
-        <h1>{props.itemName}</h1>
-        <Image src="holder.js/100px250" fluid />
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
+        <h1>{this.state.listing_title}</h1>
+        <Image src={process.env.PUBLIC_URL + "/images/brown-couch.jpg"} fluid />
+        <p>{this.state.listing_description}</p>
 
 
 

@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const UserSchema = new mongoose.Schema({
-    username: {
+    email: {
         type: String,
         required: true,
         min: 6,
-        max: 20
+        max: 200
     },
     password: {
         type: String,
@@ -20,6 +20,7 @@ const UserSchema = new mongoose.Schema({
     listings: [{type: mongoose.Schema.Types.ObjectId, ref: 'Listing'}]
 });
 
+// Encrypting password
 UserSchema.pre('save', function(next){
     if(!this.isModified('password'))
         return next();
@@ -42,5 +43,7 @@ UserSchema.methods.comparePassword = function(password,cb){
         }
     });
 }
-
-module.export = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
+console.log("User model.")
+console.log(User)
+module.export = User

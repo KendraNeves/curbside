@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Geocode from "react-geocode";
 import DeleteBtn from "../../components/DeleteBtn";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
@@ -10,6 +11,7 @@ import Nav from '../../components/Nav';
 import InputGroup from 'react-bootstrap/InputGroup'
 import "../../App.css";
 import './style.css';
+
 function Upload() {
   const Categories = [
     { key: 1, value: "Furniture" },
@@ -25,8 +27,10 @@ function Upload() {
     listing_description: "",
     listing_condition: "",
     listing_location: "",
-    listing_category: ""
+    listing_category: "",
+    listing_latlong: null
   });
+
   const onCategoriesSelectChange = (event) => {
     setCatergoriesValue(event.currentTarget.value)
   }
@@ -47,26 +51,43 @@ function Upload() {
       .then(res => loadListings())
       .catch(error => console.log(error));
   };
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value })
   };
+
   function handleFormSubmit(event) {
     event.preventDefault();
+
     if (formObject.listing_title && formObject.listing_location) {
-      API.saveListing({
-        listing_title: formObject.listing_title,
-        listing_description: formObject.listing_description,
-        listing_condition: formObject.listing_condition,
-        listing_location: formObject.listing_location,
-        listing_category: formObject.listing_category
-      })
+      // added to geocode address to obtain listing_latlong a single time during upload
+      Geocode.fromAddress(this.state.address)
+        .then(
+          response => {
+            const latlng = response.results[0].geometry.location;
+            this.setFormObject({ ...this.formObject, listing_latlong: latlng });
+          },
+          error => {
+            console.error(error);
+          }
+        )
+        .then(() => {
+          API.saveListing({
+            listing_title: formObject.listing_title,
+            listing_description: formObject.listing_description,
+            listing_condition: formObject.listing_condition,
+            listing_location: formObject.listing_location,
+            listing_latlong: formObject.listing_latlong
+          })
+        })
         .then(() => setFormObject({
           listing_title: "",
           listing_description: "",
           listing_condition: "",
           listing_location: "",
-          listing_category: ""
+          listing_category: "",
+          listing_latlong: ""
         }))
         .then(() => loadListings())
         .catch(error => console.log(error));
@@ -128,9 +149,7 @@ function Upload() {
           </Row>
         </Container>
       </div>
-    </div>
-
-
+    </div >
   );
 }
 

@@ -48,7 +48,7 @@ export default class Map extends Component {
             center={this.state.center}
             zoom={13}
           >
-            <Marker position={this.state.center} />
+            {/* <Marker position={this.state.center} /> */}
             <Circle center={this.state.center} radius={500} />
             { /* Child components, such as markers, info windows, etc. */}
             <></>

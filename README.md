@@ -21,6 +21,7 @@ npm i axios react-bootstrap bootstrap to client folder
 
 npm i @react-google-maps/api  &  react-geocode  in client/package.json
 
+
 npm install --save-dev style-loader in client
 
 npm install react-dropzone --save in client
@@ -32,6 +33,7 @@ npm i --save @fortawesome/free-solid-svg-icons in client
 npm i --save @fortawesome/react-fontawesome in client
 
 npm install multer --save in backend
+
 
 ### `npm test`
 

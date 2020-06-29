@@ -46,10 +46,10 @@ class Signin extends Component {
               <h2 className="log-title">SIGN IN</h2>
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email..." value={this.state.email} onChange={this.handleChange}></input>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email..." value={this.state.email} onChange={this.handleChange}/>
                   </div>
                   <div className="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password..." value={this.state.password} onChange={this.handleChange}></input>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..." value={this.state.password} onChange={this.handleChange}/>
                   </div>
                   <button type="submit" className="btn">LOG IN</button>
                   <br></br>

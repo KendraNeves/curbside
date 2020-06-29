@@ -23,13 +23,15 @@ function NavBar(props) {
               </Route>
             </Nav>
             <Nav>
-              <Nav.Link className="mr-2" href="/signin">Sign In</Nav.Link>
-              <Nav.Link className="" href="/signup">Sign Up</Nav.Link>
+              {/* vvv Sign in and Sign up only appear on the homepage */}
+              <Route exact path={"/"}>
+                <Nav.Link className="mr-2" href="/signin">Sign In</Nav.Link>
+                <Nav.Link className="" href="/signup">Sign Up</Nav.Link>
+              </Route>
             </Nav>
           </BrowserRouter>
         </Navbar.Collapse>
       </Navbar>
-
     </header >
   )
 }

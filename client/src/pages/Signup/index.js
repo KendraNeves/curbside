@@ -47,10 +47,10 @@ class Signup extends Component {
               <br></br>
               <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email..." value={this.state.email} onChange={this.handleChange}></input>
+                  <input type="email" className="form-control" id="email" name="email" placeholder="Email..." value={this.state.email} onChange={this.handleChange}></input>
                 </div>
                 <div className="form-group">
-                  <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password..." value={this.state.password} onChange={this.handleChange}></input>
+                  <input type="password" className="form-control" id="password" name="password" placeholder="Password..." value={this.state.password} onChange={this.handleChange}></input>
                 </div>
                 <button type="submit" className="btn">SIGN UP</button>
                 <br></br>

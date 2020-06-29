@@ -63,6 +63,7 @@ class Results extends Component {
               <Row className=" sticky-top">
                   <h2 className="hover-pointer heading" onClick={this.sortByName}>Date Added</h2>
 
+
               </Row>
           </thead>
           {this.state.listings.length ? (
@@ -70,6 +71,7 @@ class Results extends Component {
               {this.state.listingSort.map(listing => (
                   console.log(listing),
                   <Row key={listing._id} className="">
+
 
                       <CardListing
                       listingTitle={listing.listing_title}

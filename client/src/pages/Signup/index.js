@@ -30,7 +30,7 @@ function Signup(props) {
   const onSubmit = e =>{
     e.preventDefault();
     console.log(e)
-    AuthService.signin(user).then(data=>{
+    AuthService.signup(user).then(data=>{
         const { message } = data;
         setMessage(message);
         resetForm();
@@ -59,7 +59,7 @@ function Signup(props) {
               <h2 className="log-title">CREATE AN ACCOUNT</h2>
             </div>
             <div className="row">
-              <form>
+              <form onSubmit={onSubmit}>
                   <div className="form-group">
                     <input type="email" name="email" 
                             value={user.email}

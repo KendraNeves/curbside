@@ -15,6 +15,7 @@ const containerStyle = {
 export default class Map extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       center: props.latlong || {
         lat: 39.2904,
@@ -22,20 +23,20 @@ export default class Map extends Component {
       },
       address: ""
     };
-    this.setLocation = this.setLocation.bind(this);
+    // this.setLocation = this.setLocation.bind(this);
   }
 
-  setLocation() {
-    Geocode.fromAddress(this.state.address).then(
-      response => {
-        const latlng = response.results[0].geometry.location;
-        this.setState({ center: latlng });
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }
+  // setLocation() {
+  //   Geocode.fromAddress(this.state.address).then(
+  //     response => {
+  //       const latlng = response.results[0].geometry.location;
+  //       this.setState({ center: latlng });
+  //     },
+  //     error => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
 
   render() {
     return (
@@ -56,10 +57,10 @@ export default class Map extends Component {
         </LoadScript>
 
         {/* This input form is temporary and for development purposes */}
-        <form onSubmit={(event) => { event.preventDefault(); this.setLocation(); }}>
+        {/* <form onSubmit={(event) => { event.preventDefault(); this.setLocation(); }}>
           <Input onChange={(event) => { this.setState({ address: event.target.value }) }} />
           <FormBtn onClick={this.setLocation}> Submit Listing</FormBtn>
-        </form>
+        </form> */}
       </>
     )
   }

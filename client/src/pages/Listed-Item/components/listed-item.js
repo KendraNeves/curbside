@@ -28,6 +28,7 @@ class ListedItem extends Component {
   }
 
   render() {
+    var map = this.state.listing_latlong ? (<Map latlong={this.state.listing_latlong} />) : null;
     return (
       <>
         <Nav />
@@ -40,7 +41,7 @@ class ListedItem extends Component {
           <p>{this.state.listing_description}</p>
         </Row>
         <Row>
-          <Map latlong={this.state.listing_latlong} />
+          {map}
         </Row>
       </>
     );

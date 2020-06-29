@@ -8,8 +8,8 @@ const listingSchema = new Schema({
   listing_location: String,
   CategoriesValue: String,
   listing_latlong: {
-    type: "Point",
-    coordinates: [Number]
+    lat: Number,
+    lng: Number
   },
   date: { type: Date, default: Date.now }
 });

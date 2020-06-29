@@ -62,23 +62,25 @@ function Upload() {
 
     if (formObject.listing_title && formObject.listing_location) {
       // added to geocode address to obtain listing_latlong a single time during upload
-      Geocode.fromAddress(this.state.address)
+      Geocode.fromAddress(formObject.listing_location)
         .then(
           response => {
+            console.log(response);
             const latlng = response.results[0].geometry.location;
-            this.setFormObject({ ...this.formObject, listing_latlong: latlng });
+            setFormObject({ ...formObject, listing_latlong: latlng });
+            return latlng
           },
           error => {
             console.error(error);
           }
         )
-        .then(() => {
+        .then(latlng => {
           API.saveListing({
             listing_title: formObject.listing_title,
             listing_description: formObject.listing_description,
             listing_condition: formObject.listing_condition,
             listing_location: formObject.listing_location,
-            listing_latlong: formObject.listing_latlong
+            listing_latlong: latlng
           })
         })
         .then(() => setFormObject({

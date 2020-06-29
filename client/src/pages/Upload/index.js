@@ -74,6 +74,7 @@ const Categories = [
    }
    return (
       <div className="App">
+
         <Nav />
         <div style={{maxWidth:'1200px', margin:'2rem auto'}}>
             <div style={{ textAlign:'center', marginBottom:'2rem'}}>
@@ -133,6 +134,7 @@ const Categories = [
    );
  }
  
+
 export default Upload;
 
 

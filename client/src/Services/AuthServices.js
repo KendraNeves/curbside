@@ -32,7 +32,7 @@ export default {
         return fetch('/user/authenticated')
             .then(res => {
                 if (res.status === 200)
-                    return { isAuthenticated: true, user: { email: "cookielion@gmail.com", role: "" } };
+                    return { isAuthenticated: true, user: { email: "CurbSide@CSadmin.com", role: "Admin" } };
 
                 // return res.json().then(data=>data);
                 else

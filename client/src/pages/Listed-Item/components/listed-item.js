@@ -3,7 +3,6 @@ import { Image } from "react-bootstrap"
 import Map from '../../../components/Map/index';
 import Nav from '../../../components/Nav';
 import API from '../../../utilities/API';
-import listedItemData from './../dummy-json';
 import { Row, Col } from "react-bootstrap";
 
 class ListedItem extends Component {
@@ -37,7 +36,7 @@ class ListedItem extends Component {
           <Col sm={12} md={6}><h1 className={"text-center"}>{this.state.listing_title}</h1></Col>
         </Row>
         <Row>
-          <Image width={400} src={process.env.PUBLIC_URL + "/images/brown-couch.jpg"} fluid />
+          <Image width={400} fluid />
           <p>{this.state.listing_description}</p>
         </Row>
         <Row>

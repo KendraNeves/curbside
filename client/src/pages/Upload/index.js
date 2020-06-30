@@ -14,7 +14,7 @@ function Upload() {
 const Categories = [
  {key:1, value: "Furniture"},
  {key:2, value: "Electronics"},
- {key:3, value: "Apparral"},
+ {key:3, value: "Apparel"},
  {key:4, value: "Toys/Games"},
  {key:5, value: "Books"}
 ]

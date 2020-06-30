@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
+import "./style.css";
 
 function AppModal(props) {
     const [modalShow, setModalShow] = React.useState(false);

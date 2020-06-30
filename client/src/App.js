@@ -13,11 +13,11 @@ function App() {
     <BrowserRouter>
       <Route exact path={["/", "/homepage"]} component={Homepage} />
       <Route exact path="/map" component={Map} />
-      <Route exact path="/#search" component={Search} />
-      <Route exact path="/#signin" component={Signin} />
-      <Route exact path="/#signup" component={Signup} />
-      <Route exact path="/#upload" component={Upload} />
-      <Route exact path="/#listings/:listing_id" render={(props) => <ListedItemPage listing_id={props.match.params.listing_id} />} />
+      <Route exact path="/search" component={Search} />
+      <Route exact path="/signin" component={Signin} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/upload" component={Upload} />
+      <Route exact path="/listings/:listing_id" render={(props) => <ListedItemPage listing_id={props.match.params.listing_id} />} />
     </BrowserRouter>
   )
 };

@@ -36,7 +36,7 @@ function Signup(props) {
         resetForm();
         if(!message.msgError){
           timerID = setTimeout(()=>{
-            props.history.push('/login');
+            props.history.push('/signin');
           }, 2000)
         }
     });

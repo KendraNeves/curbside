@@ -1,0 +1,14 @@
+.navbar-brand {
+  color: black;
+  font-family: "Titillium Web";
+  font-size: 35px;
+  letter-spacing: 5px;
+  padding: 0.5rem;
+}
+
+.navbar-collapse {
+  color: black;
+  font-family: "Titillium Web";
+  letter-spacing: 3px;
+  padding-right: 3rem;
+}

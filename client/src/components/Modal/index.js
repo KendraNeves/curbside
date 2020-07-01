@@ -1,14 +1,14 @@
 
 import React, { useState } from 'react';
 import "../../App.css";
-import "./style.css"
+import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
-import "./style.css";
+
 
 function AppModal(props) {
     const [modalShow, setModalShow] = React.useState(false);

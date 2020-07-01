@@ -2,7 +2,8 @@ body {
     background-color: #fdf5e6;
 }
 
-.btn-custom {
+.btn.btn-custom,
+.btn.btn-custom:hover {
     background-color: #738276;
 }
 

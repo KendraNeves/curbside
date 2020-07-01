@@ -7,6 +7,10 @@ const listingSchema = new Schema({
   listing_condition: String,
   listing_location: String,
   CategoriesValue: String,
+  listing_latlong: {
+    lat: Number,
+    lng: Number
+  },
   date: { type: Date, default: Date.now }
 });
 

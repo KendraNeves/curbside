@@ -7,6 +7,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Upload from "./pages/Upload";
 import Map from "./pages/Map";
+import ListedItemPage from './pages/Listed-Item/index';
 
 function App() {
   const { user,setUser,isAuthenicated,setIsAuthenicated } = useContext(AuthContext);
@@ -20,6 +21,7 @@ function App() {
       <Route path="/signin" component={Signin} />
       <Route path="/signup" component={Signup} />
       <Route path="/upload" component={Upload} />
+      <Route exact path="/listings/:listing_id" render={(props) => <ListedItemPage listing_id={props.match.params.listing_id} />} />
     </BrowserRouter>
   )
 };

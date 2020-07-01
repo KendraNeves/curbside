@@ -12,35 +12,31 @@ const containerStyle = {
   height: '400px'
 };
 
-const center = {
-  lat: 69,
-  lng: -76
-};
-
 export default class Map extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
-      center: {
-        lat: 0,
-        lng: 0
+      center: props.latlong || {
+        lat: 39.2904,
+        lng: -76.6122
       },
       address: ""
     };
-    this.setLocation = this.setLocation.bind(this);
+    // this.setLocation = this.setLocation.bind(this);
   }
 
-  setLocation() {
-    Geocode.fromAddress(this.state.address).then(
-      response => {
-        const latlng = response.results[0].geometry.location;
-        this.setState({ center: latlng });
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }
+  // setLocation() {
+  //   Geocode.fromAddress(this.state.address).then(
+  //     response => {
+  //       const latlng = response.results[0].geometry.location;
+  //       this.setState({ center: latlng });
+  //     },
+  //     error => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
 
   render() {
     return (
@@ -53,7 +49,7 @@ export default class Map extends Component {
             center={this.state.center}
             zoom={13}
           >
-            <Marker position={this.state.center} />
+            {/* <Marker position={this.state.center} /> */}
             <Circle center={this.state.center} radius={500} />
             { /* Child components, such as markers, info windows, etc. */}
             <></>
@@ -61,10 +57,10 @@ export default class Map extends Component {
         </LoadScript>
 
         {/* This input form is temporary and for development purposes */}
-        <form onSubmit={(event) => { event.preventDefault(); this.setLocation(); }}>
+        {/* <form onSubmit={(event) => { event.preventDefault(); this.setLocation(); }}>
           <Input onChange={(event) => { this.setState({ address: event.target.value }) }} />
           <FormBtn onClick={this.setLocation}> Submit Listing</FormBtn>
-        </form>
+        </form> */}
       </>
     )
   }

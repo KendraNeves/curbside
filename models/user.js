@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -17,11 +17,11 @@ const UserSchema = new mongoose.Schema({
     //     enum: ['user', 'admin'],
     //     required: true
     // },
-    listings: [{type: mongoose.Schema.Types.ObjectId, ref: 'Listing'}]
+    // listings: [{type: mongoose.Schema.Types.ObjectId, ref: 'Listing'}]
 });
 
 // Encrypting password
-UserSchema.pre('save', function(next){
+userSchema.pre('save', function(next){
     if(!this.isModified('password'))
         return next();
     bcrypt.hash(this.password,10,(err,passwordHash)=>{
@@ -32,7 +32,7 @@ UserSchema.pre('save', function(next){
     });
 });
 
-UserSchema.methods.comparePassword = function(password,cb){
+userSchema.methods.comparePassword = function(password,cb){
     bcrypt.compare(password,this.password,(err,isMatch)=>{
         if(err)
             return cb(err);
@@ -43,7 +43,7 @@ UserSchema.methods.comparePassword = function(password,cb){
         }
     });
 }
-const User = mongoose.model('user', UserSchema);
+const User = mongoose.model('User', userSchema);
 console.log("User model.")
 console.log(User)
-module.export = User
+module.exports = User;

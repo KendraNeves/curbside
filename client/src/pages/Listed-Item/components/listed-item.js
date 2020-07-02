@@ -13,7 +13,8 @@ class ListedItem extends Component {
       listing_description: "",
       listing_condition: "",
       listing_location: "",
-      listing_latlong: null
+      listing_latlong: null,
+      listing_image: "" // Base64 representation of image
     };
 
     // TODO: This is just a test
@@ -36,7 +37,7 @@ class ListedItem extends Component {
           <Col sm={12} md={6}><h1 className={"text-center"}>{this.state.listing_title}</h1></Col>
         </Row>
         <Row>
-          <Image width={400} fluid />
+          <Image width={400} src={this.state.listing_image} fluid />
           <p>{this.state.listing_description}</p>
         </Row>
         <Row>

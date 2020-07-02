@@ -13,11 +13,11 @@ function ImageUpload(props) {
         let file = files[0];
         Resizer.imageFileResizer(
             file,
-            300,
-            240,
-            "JPEG",
-            100,
-            0,
+            300, // maxWidth
+            240, // maxHeight
+            "JPEG", // output format
+            50, // compression ratio
+            0, // rotation
             (uri) => {
                 props.setUploadImage(uri);
             },
@@ -38,8 +38,8 @@ function ImageUpload(props) {
             <img src={props.image} />
         </div>
     ) : (
-        <FontAwesomeIcon icon="plus" style={{ fontSize: "3rem" }} />
-    );
+            <FontAwesomeIcon icon="plus" style={{ fontSize: "3rem" }} />
+        );
 
     return (
         <div style={{ display: "flex", justifyContent: "space-between" }}>

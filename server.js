@@ -3,22 +3,31 @@ const mongoose = require('mongoose');
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const cookieParser = require('cookie-parser');
 
+// Cookie Parser Middleware
+app.use(cookieParser());
 // require('./models/mlab');
 
+// Body-Parser Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+// User route
+const userRouter = require('./routes/api/user');
+app.use('/api/user', userRouter);
+
 // Add routes, both API and view
 app.use(routes);
 
-
+// Connect to Mongo
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/listings", {
 });
-
 
 //when connected successfully
 mongoose.connection.on('connected', () => {

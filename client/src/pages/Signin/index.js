@@ -1,11 +1,37 @@
-import React, {Component} from "react";
+import React, {useState,useContext} from "react";
+import AuthServices from '../../Services/AuthServices';
+import AuthContext from '../../Context/AuthContext';
+import Message from '../../components/Message/index';
+import signin_img from "../../assets/images/img1.png";
 import {Link} from "react-router-dom";
 
-class Signin extends Component {
-  constructor() {
-    super();
+function Signin(props) {
+  const [user,setUser] = useState({email: "", password: ""});
+  const [message,setMessage] = useState(null);
+  const authContext = useContext(AuthContext);
 
-    this.state = {
+  const onChange = e =>{
+    setUser({...user,[e.target.name] : e.target.value});
+    console.log(user)
+  }
+
+const onSubmit = e =>{
+  e.preventDefault();
+  console.log(e)
+  AuthServices.signin(user).then(data=>{
+    const { isAuthenticated,user,message} = data;
+    if(isAuthenticated){
+      authContext.setUser(user);
+      authContext.setIsAuthenicated(isAuthenticated);
+      props.history.push('/search');
+    }
+    else{
+      setMessage(message)
+    }
+  })
+}
+
+    {/* this.state = {
       email: "",
       password: ""
     };
@@ -31,8 +57,8 @@ class Signin extends Component {
     console.log(this.state);
   }
 
-  render() {
-    return(
+  render() { */}
+    return (
       <div className="log">
         <header className="log-header">
           <a className="log-brand" href="/">CURBSIDE  </a>
@@ -44,22 +70,22 @@ class Signin extends Component {
             </div>
             <div className="col-6">
               <h2 className="log-title">SIGN IN</h2>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={onSubmit}>
                   <div className="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email..." value={this.state.email} onChange={this.handleChange}/>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email..." />
                   </div>
                   <div className="form-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..." value={this.state.password} onChange={this.handleChange}/>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..."/>
                   </div>
                   <button type="submit" className="btn">LOG IN</button>
                   <br></br>
                   <Link id="signin-link" to="/signup">SIGN UP</Link>
-                </form>
+              </form>
+              {message ? <Message message={message} /> : null}
             </div>
           </div>
         </div>
       </div>
     )
-  }
 }
 export default Signin;

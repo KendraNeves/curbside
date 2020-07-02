@@ -1,67 +1,93 @@
-import React, { Component } from "react";
+import React, {useState, useRef, useEffect} from "react";
+import AuthService from '../../Services/AuthServices';
+import Message from '../../components/Message/index';
 import "./style.css";
+import signup_img from "../../assets/images/img1.png";
 import {Link} from "react-router-dom";
 
-class Signup extends Component {
-  constructor() {
-    super();
+function Signup(props) {
+  const [user,setUser] =useState({email: "", password: "", role: ""});
+  const [message,setMessage] = useState(null);
+  let timerID = useRef(null);
 
-    this.state = {
-      email: "",
-      password: ""
-    };
+  useEffect(()=>{
+    return ()=>{
+      clearTimeout(timerID)
+    }
+  },[]);
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  const onChange = e =>{
+    setUser({...user,[e.target.name] : e.target.value});
+    console.log(user)
   }
-  
-  handleChange(e) {
-    let target = e.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
 
-    this.setState({
-      [name]: value
+  // Reset form
+  const resetForm = ()=>{
+    setUser({email: '', password: '', role: ''})
+  }
+
+  // Displays message to user for 2 seconds; then redirects user to signin page
+  const onSubmit = e =>{
+    e.preventDefault();
+    console.log(e)
+    AuthService.signup(user).then(data=>{
+        const { message } = data;
+        setMessage(message);
+        resetForm();
+        if(!message.msgError){
+          timerID = setTimeout(()=>{
+            props.history.push('/signin');
+          }, 2000)
+        }
     });
   }
+  
 
-  handleSubmit(e) {
-    e.preventDefault();
+  return(
+    <div className="log">
+      <header className="log-header">
+        <a className="log-brand" href="/">CURBSIDE</a>
+      </header>
 
-    console.log("The form was submitted with the following data");
-    console.log(this.state);
-  }
-
-  render() {
-    return(
-      <div className="log">
-        <header className="log-header">
-          <a className="log-brand" href="/">CURBSIDE</a>
-        </header>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-6 img-holder">
-            </div>
-            <div className="col-6">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-6">
+            <img src={signup_img} alt="boxes toppled over"></img>
+          </div>
+          <div className="col-6">
+            <div className="row">
               <h2 className="log-title">CREATE AN ACCOUNT</h2>
-              <br></br>
-              <form onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                  <input type="email" className="form-control" id="email" name="email" placeholder="Email..." value={this.state.email} onChange={this.handleChange}></input>
-                </div>
-                <div className="form-group">
-                  <input type="password" className="form-control" id="password" name="password" placeholder="Password..." value={this.state.password} onChange={this.handleChange}></input>
-                </div>
-                <button type="submit" className="btn">SIGN UP</button>
-                <br></br>
-                <Link id="signin-link" to="/signin">SIGN IN</Link>
-                </form>
+            </div>
+            <div className="row">
+              <form onSubmit={onSubmit}>
+                  <div className="form-group">
+                    <input type="email" name="email" 
+                            value={user.email}
+                            onChange={onChange}
+                            className="form-control" 
+                            id="exampleInputEmail1" 
+                            aria-describedby="emailHelp" 
+                            placeholder="Email"></input>
+                  </div>
+                  <div className="form-group">
+                    <input type="password" name="password" 
+                            value={user.password}
+                            onChange={onChange}
+                            className="form-control" 
+                            id="exampleInputPassword1" 
+                            placeholder="Password"></input>
+                  </div>
+                  <button type="submit" className="btn">SIGN UP</button>
+                  <br></br>
+                  <Link id="signin-link" to="/signin">SIGN IN</Link>
+              </form>
+              {message ? <Message message={message}/> : null}
             </div>
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Signup;

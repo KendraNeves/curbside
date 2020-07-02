@@ -1,3 +1,4 @@
 module.exports = {
-    Listing: require("./listing")
+    Listing: require("./listing"),
+    User: require('./user')
   };

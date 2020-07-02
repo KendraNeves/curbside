@@ -1,5 +1,5 @@
 import React, {useState,useContext} from "react";
-import AuthService from '../../Services/AuthServices';
+import AuthServices from '../../Services/AuthServices';
 import AuthContext from '../../Context/AuthContext';
 import Message from '../../components/Message/index';
 import signin_img from "../../assets/images/img1.png";
@@ -18,7 +18,7 @@ function Signin(props) {
 const onSubmit = e =>{
   e.preventDefault();
   console.log(e)
-  AuthService.login(user).then(data=>{
+  AuthServices.signin(user).then(data=>{
     const { isAuthenticated,user,message} = data;
     if(isAuthenticated){
       authContext.setUser(user);
@@ -72,10 +72,10 @@ const onSubmit = e =>{
               <h2 className="log-title">SIGN IN</h2>
                 <form onSubmit={onSubmit}>
                   <div className="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email..." value={this.state.email} onChange={this.handleChange}/>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email..." />
                   </div>
                   <div className="form-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..." value={this.state.password} onChange={this.handleChange}/>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..."/>
                   </div>
                   <button type="submit" className="btn">LOG IN</button>
                   <br></br>

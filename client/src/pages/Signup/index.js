@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from "react";
 import AuthService from '../../Services/AuthServices';
-// import Message from '../../components/Message/index';
+import Message from '../../components/Message/index';
 import "./style.css";
 // import signup_img from "../../assets/images/img1.png";
 import {Link} from "react-router-dom";
@@ -48,7 +48,7 @@ function Signup(props) {
     <div className="row">
 
         <div className="col-sm-6 px-0 d-none d-sm-block">
-            <img className="login-img" />
+            <img className="login-img"/>
         </div>
         <div className="col-sm-6 login-section-wrapper">
             <div className="brand-wrapper">

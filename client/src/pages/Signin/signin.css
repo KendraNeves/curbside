@@ -20,7 +20,7 @@ display: flex;
 -webkit-box-direction: normal;
         flex-direction: column;
 padding: 68px 100px;
-background-color: #fff; 
+
 }
 
 @media (max-width: 991px) {
@@ -39,7 +39,7 @@ background-color: #fff;
 .login-wrapper {
 width: 300px;
 max-width: 120%;
-margin-left: 100px;
+/* margin-left: 100px; */
 padding-top: 24px;
 padding-bottom: 24px; }
 @media (max-width: 575px) {

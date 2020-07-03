@@ -72,10 +72,10 @@ const onSubmit = e =>{
               <h2 className="log-title">SIGN IN</h2>
                 <form onSubmit={onSubmit}>
                   <div className="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email..." />
+                    <input type="email" className="form-control" id="email" name="email" placeholder="Email..." />
                   </div>
                   <div className="form-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..."/>
+                    <input type="password" className="form-control" id="password" name="password" placeholder="Password..."/>
                   </div>
                   <button type="submit" className="btn">LOG IN</button>
                   <br></br>

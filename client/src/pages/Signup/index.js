@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
-import AuthService from '../../Services/AuthServices';
+import AuthServices from '../../Services/AuthServices';
 import Message from '../../components/Message/index';
 import "./style.css";
 // import signup_img from "../../assets/images/img1.png";
@@ -30,7 +30,7 @@ function Signup(props) {
   const onSubmit = e =>{
     e.preventDefault();
     console.log(e)
-    AuthService.signup(user).then(data=>{
+    AuthServices.signup(user).then(data=>{
         const { message } = data;
         setMessage(message);
         resetForm();

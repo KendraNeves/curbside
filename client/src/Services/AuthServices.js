@@ -1,7 +1,9 @@
+// Fetch Requests container
+
 export default {
     signin: user => {
-        return fetch('/api/user', {
-            method: 'post',
+        return fetch('/api/user/signin', {
+            method: 'POST',
             body: JSON.stringify(user),
             headers: {
                 'Content-Type': 'application/json'
@@ -11,7 +13,7 @@ export default {
     },
 
     signup: user => {
-        return fetch('/api/user', {
+        return fetch('/api/user/signup', {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {
@@ -23,13 +25,13 @@ export default {
     },
 
     signout: () => {
-        return fetch('/user/signout')
+        return fetch('/api/user/signout')
             .then(res => res.json())
             .then(data => data)
     },
 
     isAuthenticated: () => {
-        return fetch('/user/authenticated')
+        return fetch('/api/user/authenticated')
             .then(res => {
                 if (res.status === 200)
                     return { isAuthenticated: true, user: { email: "CurbSide@CSadmin.com", role: "Admin" } };

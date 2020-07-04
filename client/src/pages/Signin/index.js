@@ -101,7 +101,7 @@ const onSubmit = e =>{
                             <input className="btn btn-dark" 
                             type="submit" />
                         </form>
-                        
+                        {message ? <Message message={message} /> : null}
                         <p className="login-wrapper-footer-text">Don't have an account? <Link id="signin-link" to="/signup">Register here</Link></p>
                         </div>
                     </div>

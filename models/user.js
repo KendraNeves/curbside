@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        allowNull: false
     },
     // role: {
     //     type: String,
@@ -32,14 +33,14 @@ userSchema.pre('save', function(next){
     });
 });
 
-userSchema.methods.comparePassword = function(password,cb){
-    bcrypt.compare(password,this.password,(err,isMatch)=>{
+userSchema.methods.comparePassword = function(password){
+    return bcrypt.compare(password,this.password,(err,isMatch)=>{
         if(err)
-            return cb(err);
+            return (err);
         else{
             if(!isMatch)
-                return cb(null,isMatch);
-            return cb(null,this);
+                return (null, isMatch);
+            return (null,this);
         }
     });
 }

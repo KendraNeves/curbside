@@ -10,6 +10,7 @@ export default {
             }
         }).then(res => res.json())
             .then(data => data)
+
     },
 
     signup: user => {
@@ -33,8 +34,8 @@ export default {
     isAuthenticated: () => {
         return fetch('/api/user/authenticated')
             .then(res => {
-                if (res.status === 200)
-                    return { isAuthenticated: true, user: { email: "CurbSide@CSadmin.com", role: "Admin" } };
+                if (res.status == 200)
+                    return { isAuthenticated: true };
 
                 // return res.json().then(data=>data);
                 else

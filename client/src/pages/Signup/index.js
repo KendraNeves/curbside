@@ -42,7 +42,6 @@ function Signup(props) {
     });
   }
   
-
   return(
     <div className="log">
       <header className="log-header">

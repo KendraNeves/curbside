@@ -16,6 +16,9 @@ const signToken = userID => {
     }, "Curbside", { expiresIn: "12h" });
 }
 
+// =====================================================
+
+
 // Express.Router sends a get request to '/authenticated' path if the user authentication is true
 userRouter.get('/authenticated', passport.authenticate('local', { session: false }), (req, res) => {
     if (req.isAuthenticated()) {
@@ -26,7 +29,9 @@ userRouter.get('/authenticated', passport.authenticate('local', { session: false
     }
 });
 
-// Express.Router sends a post request to server
+// ======================================================
+
+// Express.Router sends a post response from server to client-side
 userRouter.post('/signup', (req, res) => {
     const { email, password, role } = req.body;
     User.findOne({ email }, (err, user) => {
@@ -39,41 +44,19 @@ userRouter.post('/signup', (req, res) => {
             const newUser = new User({email,password,role});
             newUser.save(err=>{
                 if(err)
-                    res.status(500).json({message: {msgBody: "Error has occured.", msgError: true} });
+                    res.status(500).json({message: {msgBody: "Error has occurred.", msgError: true} });
                 else
-                    res.status(201).json({message : {msgBody: "Accout successfully created!!", msgError: false} });
+                    res.status(201).json({message : {msgBody: "Account successfully created!!", msgError: false} });
             });
         }
     })
-    
     // Test - Pulls out data from User inputs
     User.create(req.body)
     .then(user => {
+        console.log("SIGNUP RAN SUCCESSFULLY!")
         console.log(user);
         console.log(req.body)
-    })
-
-
-    // Checking for existing user and Validation
-    // const userExists = () => {
-    //     console.log("Checking Stuff!! Line 33")
-    //     return User.findOne({ email }, (err, user) => {
-    //         if (err) {
-    //             // res.status(500).json({ message: { msgBody: "Error has occurred.", msgError: true } });
-    //             console.log("WORDSSS")
-    //             return true
-    //         }
-    //         if (user)
-    //             res.status(400).json({ message: { msgBody: "Username is already taken.", msgError: true } });
-
-    //     })
-
-    // };
-
-    // if (userExists())
-    //     res.status(500).json({ message: { msgBody: "Error has occurred.", msgError: true } });
-
-    // const newUser = new User ({ email: req.body.email, password: req.body.password });
+    });
 
 
     // Adding bcrypt and hash
@@ -98,18 +81,26 @@ userRouter.post('/signup', (req, res) => {
     // });
 });
 
-userRouter.post('/signin', passport.authenticate('local', { session: false }), (req, res) => {
-    if (req.isAuthenticated()) {
+
+// ==================================================================
+// passport.authenticate('local',{session : false})
+userRouter.post('/signin', passport.authenticate('local', {session : false}),
+(req, res)=>{
+    if(req.isAuthenticated()){
         const { _id, email, role } = req.user;
+        console.log(req.user)
         const token = signToken(_id);
         res.cookie('access_token', token, { httpOnly: true, sameSite: true });
         res.status(200).json({ isAuthenticated: true, user: { email, role } });
-    }
+    } 
 });
+
+
+// ====================================================================
 
 userRouter.get('/signout', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.clearCookie('access_token');
-    res.json({ user: { username: "", role: "" }, success: true });
+    res.json({ user: { email: "", role: "" }, success: true });
 });
 
 // Creates new listing
@@ -151,8 +142,8 @@ userRouter.get('/signout', passport.authenticate('jwt', { session: false }), (re
 // });
 
 userRouter.get('/authenticated', passport.authenticate('jwt', { session: false }), (req, res) => {
-    const { username, role } = req.user;
-    res.status(200).json({ isAuthenticated: true, user: { username, role } });
+    const { email, role } = req.user;
+    res.status(200).json({ isAuthenticated: true, user: { email, role } });
 });
 
 module.exports = userRouter;

@@ -30,16 +30,61 @@ passport.use(new JwtStrategy({
 }));
 
 // LOGIN CONFIGURATION
-// Authentication Local Strategy using verify-callback, email and password, and done function
-passport.use(new LocalStrategy((email,password,done)=> {
-    User.findOne({ email },(err,user)=>{
-        // something went wrong with database
-        if(err)
-            return done(err, { message: 'Database is unavaliable.' });
-        // If no user exist
-        if(!user)
-            return done(null, false, { message: 'Incorrect password.' });
-        // checks if password is correct
-        user.comparePassword(password,done);
-    })
-}))
+// Local Strategy Authentication using verify-callback, email and password, and done function
+passport.use(new LocalStrategy(
+    { 
+        usernameField: "email"
+    },
+    (email,password,done)=> {
+        // When a user tries to signin this code runs
+    User.findOne({ email },
+       
+    )
+    .then(function(dbUser){
+        // If there's no user with given email
+        if(!dbUser){
+            return done(null, false, {
+                message: "Email does not match existing account."
+            });
+        }
+        // If there is a user with the given email, but wrong password
+        else if (!dbUser.comparePassword(password)){
+            return done(null, false, {
+                message: "Password does not match existing account."
+            });
+        }
+        //  If none of the above, return the user
+        return done(null, dbUser);
+    });
+}
+));
+
+
+// Previous code for local strategy
+// (err,user)=>{
+//     // something went wrong with database
+//     if(err)
+//         return done(err, { message: 'Database is unavaliable.' });
+//     // If no user exist
+//     if(!user)
+//         return done(null, false, { message: 'Email does not match existing account.' });
+//     // checks if password is correct
+//     user.comparePassword(password,done);
+// }
+
+
+
+
+
+// In order to help keep authentication state across HTTP requests,
+// Sequelize needs to serialize and deserialize the user
+// Just consider this part boilerplate needed to make it all work
+passport.serializeUser(function(user, cb) {
+    cb(null, user);
+  });
+  
+  passport.deserializeUser(function(obj, cb) {
+    cb(null, obj);
+  });
+  
+  

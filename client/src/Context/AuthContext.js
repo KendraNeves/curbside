@@ -1,5 +1,5 @@
 import React, {createContext,useState,useEffect} from 'react';
-import AuthService from "../Services/AuthServices";
+import AuthServices from "../Services/AuthServices";
 
 // Provides and consumes global state
 export const AuthContext = createContext();
@@ -7,14 +7,14 @@ export const AuthContext = createContext();
 export default ({ children })=>{
     // State hooks
     const[user,setUser] =useState(null);
-    const[isAuthenicated,setIsAuthenicated] =useState(false);
+    const[isAuthenticated,setIsAuthenticated] =useState(false);
     const[isLoaded,setIsLoaded] =useState(false);
     
     // UseEffect hook
     useEffect(()=>{
-        AuthService.isAuthenticated().then(data =>{
+        AuthServices.isAuthenticated().then(data =>{
             setUser(data.user);
-            setIsAuthenicated(data.isAuthenicated);
+            setIsAuthenticated(data.isAuthenticated);
             setIsLoaded(true);
         })
     }, [] )
@@ -23,7 +23,7 @@ export default ({ children })=>{
     return(
         <div>
             {!isLoaded ? <h1>Loading</h1> : 
-            <AuthContext.Provider value={{user,setUser,isAuthenicated,setIsAuthenicated}}>
+            <AuthContext.Provider value={{user,setUser,isAuthenticated,setIsAuthenticated}}>
                 { children }
             </AuthContext.Provider>}
         </div>

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import NavBar from './../../components/Nav/index';
+import Navbar from "react-bootstrap/Navbar";
 
 class Signup extends Component {
   constructor() {
@@ -14,7 +16,7 @@ class Signup extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   handleChange(e) {
     let target = e.target;
     let value = target.type === "checkbox" ? target.checked : target.value;
@@ -33,11 +35,9 @@ class Signup extends Component {
   }
 
   render() {
-    return(
+    return (
       <div className="log">
-        <header className="log-header">
-          <a className="log-brand" href="/">CURBSIDE</a>
-        </header>
+        <NavBar />
         <div className="container-fluid">
           <div className="row">
             <div className="col-6 img-holder">
@@ -55,7 +55,7 @@ class Signup extends Component {
                 <button type="submit" className="btn">SIGN UP</button>
                 <br></br>
                 <Link id="signin-link" to="/signin">SIGN IN</Link>
-                </form>
+              </form>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import SearchForm from "./search-function";
 import { Col } from "../../components/Grid/index";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import "../../App.css";
+import "./search.css";
 import AppModal from "../../components/Modal";
 import CardListing from "../../components/Card";
 
@@ -55,9 +55,16 @@ class Results extends Component {
         <Container fluid>
           <div style={{ textAlign: 'center' }}>
                 <h2>  Listings   </h2>
+                <h3><SearchForm
+                  listing={this.state.listings}
+                  handleSearch={this.handleSearch}
+                  handleInputChange={
+                    this.handleInputChange
+                  }
+                /></h3>
             </div>
             <Row>
-              <Col size="md-3 sm-12">
+              {/* <Col size="md-3 sm-12">
                 <SearchForm
                   listing={this.state.listings}
                   handleSearch={this.handleSearch}
@@ -65,8 +72,8 @@ class Results extends Component {
                     this.handleInputChange
                   }
                 />
-              </Col>
-              <Col size="md-9 sm-12">
+              </Col> */}
+              <Col className="itemTable" size="md-9 sm-12">
                             <Row>
                                 <thead className="">
                                     <h2

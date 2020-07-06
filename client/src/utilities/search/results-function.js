@@ -53,70 +53,72 @@ class Results extends Component {
     return (
       <div>
         <Container fluid>
-          <Row>
-            <Col size="md-3 sm-12">
-              <SearchForm
-                listing={this.state.listings}
-                handleSearch={this.handleSearch}
-                handleInputChange={
-                  this.handleInputChange
-                }
-              />
-            </Col>
-            <Col size="md-9 sm-12">
-              <thead className="">
-                <Row className=" sticky-top">
-                  <h2
-                    className="hover-pointer heading"
-                    onClick={this.sortByName}
-                  >
-                    Date Added
-                  </h2>
-                </Row>
-              </thead>
-              {this.state.listings.length ? (
-                <tbody className="">
-                  <Row>
-                  
-                    {this.state.listingSort.map(
-                      (listing) => {
-                    return ( 
-                        <Col size="md-5 sm-12">
-                          <CardListing
-                            listingTitle={
-                              listing.listing_title
-                            }
-                            listingDescription={
-                              listing.listing_description
-                            }
-                            location={
-                              listing.listing_location
-                            }
-                            modalButton={
-                              <AppModal
-                                content={
-                                  listing.listing_title
-                                }
-                                description={
-                                  listing.listing_description
-                                }
-                                location={
-                                  listing.listing_location
-                                }
-                              />
-                            }
-                          />
-                          </Col>
-                        )
-                      }
-                    )}
-                  </Row>
-                </tbody>
-              ) : (
-                <h3>No Results to Display</h3>
-              )}
-            </Col>
+          <div style={{ textAlign: 'center' }}>
+                <h2>  Listings   </h2>
+            </div>
+            <Row>
+              <Col size="md-3 sm-12">
+                <SearchForm
+                  listing={this.state.listings}
+                  handleSearch={this.handleSearch}
+                  handleInputChange={
+                    this.handleInputChange
+                  }
+                />
+              </Col>
+              <Col size="md-9 sm-12">
+                            <Row>
+                                <thead className="">
+                                    <h2
+                                        className="hover-pointer heading"
+                                        onClick={this.sortByName}
+                                    >
+                                        Date Added</h2>
+                                </thead>
+                            </Row>
+                            <Row>
+
+                                {this.state.listingSort.map(
+                                    (listing) => {
+                                        return (
+                                            <Col size="md-4 sm-12">
+                                                <CardListing
+                                                    listingTitle={
+                                                        listing.listing_title
+                                                    }
+                                                    listingDescription={
+                                                        listing.listing_description
+                                                    }
+                                                    location={listing.listing_location}
+                                                    modalButton={
+                                                        <AppModal
+                                                            content={
+                                                                listing.listing_title
+                                                            }
+                                                            description={
+                                                                listing.listing_description
+                                                            }
+                                                            location={
+                                                                listing.listing_location
+                                                            }
+                                                        />
+                                                    }
+                                                />
+                                            </Col>
+                                        )
+                                    }
+                                )}
+                            </Row>
+                            {this.state.listings.length ? (
+                                <tbody className="">
+
+                                </tbody>
+                            ) : (
+                                    <h3>No Results to Display</h3>
+                                )}
+                        </Col>
           </Row>
+          
         </Container>
       </div>
     );

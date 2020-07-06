@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap"
 import Map from '../../../components/Map/index';
 import Nav from '../../../components/Nav';
 import API from '../../../utilities/API';
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container, Jumbotron } from "react-bootstrap";
 
 class ListedItem extends Component {
   constructor(props) {
@@ -29,20 +29,39 @@ class ListedItem extends Component {
   render() {
     var map = this.state.listing_latlong ? (<Map latlong={this.state.listing_latlong} />) : null;
     return (
-      <>
+      <div>
         <Nav />
+        {/* Item name/title */}
         <Row>
-          <Col md={6}></Col>
-          <Col sm={12} md={6}><h1 className={"text-center"}>{this.state.listing_title}</h1></Col>
+          <Col md={1}></Col>
+          <Col md={5}></Col>
+          <Col sm={12} md={5}>
+            <div style={{
+              backgroundColor: "yellow"
+            }}
+              className={"container-fluid text-center title"}>{this.state.listing_title}
+            </div>
+          </Col>
+          <Col md={1}></Col>
         </Row>
+        {/* Item image and description */}
         <Row>
-          <Image width={400} fluid />
-          <p>{this.state.listing_description}</p>
+          <Col sm={1}></Col>
+          <Col sm={10} md={5} style={{ width: "400px" }} fluid>
+            <Image className="img-fluid" src={process.env.PUBLIC_URL + "/images/brown-couch.jpg"} />
+          </Col>
+          <Col sm={10} md={5} style={{ backgroundColor: "pink" }} className="pt-5 my-5">
+            <p className="ml-5" >{this.state.listing_description}</p>
+          </Col>
+          <Col sm={1} md={1}></Col>
         </Row>
+        {/* Map */}
         <Row>
-          {map}
+          <Col sm={1} md={7}></Col>
+          <Col sm={10} md={4}>{map}</Col>
+          <Col sm={1} md={1}></Col>
         </Row>
-      </>
+      </div>
     );
   }
 }

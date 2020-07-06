@@ -1,0 +1,9 @@
+html {
+  width: 100%;
+}
+
+.title {
+  font-family: "Titillium Web";
+  font-weight: bolder;
+  font-size: 30px;
+}

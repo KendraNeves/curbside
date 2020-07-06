@@ -64,54 +64,52 @@ class Results extends Component {
               />
             </Col>
             <Col size="md-9 sm-12">
-              <thead className="">
-                <Row className=" sticky-top">
+              <Row>
+                <thead className="">
                   <h2
                     className="hover-pointer heading"
                     onClick={this.sortByName}
                   >
                     Date Added
                   </h2>
-                </Row>
-              </thead>
+                </thead>
+              </Row>
+              <Row>
+                {this.state.listingSort.map(
+                  (listing) => {
+                    return (
+                      <Col size="md-5 sm-12">
+                        <CardListing
+                          listingTitle={
+                            listing.listing_title
+                          }
+                          listingDescription={
+                            listing.listing_description
+                          }
+                          location={
+                            listing.listing_location
+                          }
+                          modalButton={
+                            <AppModal
+                              content={
+                                listing.listing_title
+                              }
+                              description={
+                                listing.listing_description
+                              }
+                              location={
+                                listing.listing_location
+                              }
+                            />
+                          }
+                        />
+                      </Col>
+                    );
+                  }
+                )}
+              </Row>
               {this.state.listings.length ? (
-                <tbody className="">
-                  <Row>
-                  
-                    {this.state.listingSort.map(
-                      (listing) => {
-                    return ( 
-                        <Col size="md-5 sm-12">
-                          <CardListing
-                            listingTitle={
-                              listing.listing_title
-                            }
-                            listingDescription={
-                              listing.listing_description
-                            }
-                            location={
-                              listing.listing_location
-                            }
-                            modalButton={
-                              <AppModal
-                                content={
-                                  listing.listing_title
-                                }
-                                description={
-                                  listing.listing_description
-                                }
-                                location={
-                                  listing.listing_location
-                                }
-                              />
-                            }
-                          />
-                          </Col>
-                        )
-                      }
-                    )}
-                  </Row>
-                </tbody>
+                <tbody className=""></tbody>
               ) : (
                 <h3>No Results to Display</h3>
               )}

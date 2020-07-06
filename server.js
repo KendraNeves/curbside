@@ -4,7 +4,10 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// require('./models/mlab');
+//user Router
+// const userRouter = require('./routes/api/user');
+// app.use("api/user", userROuter);
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

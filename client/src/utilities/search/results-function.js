@@ -64,16 +64,7 @@ class Results extends Component {
                 /></h3>
             </div>
             <Row>
-              {/* <Col size="md-3 sm-12">
-                <SearchForm
-                  listing={this.state.listings}
-                  handleSearch={this.handleSearch}
-                  handleInputChange={
-                    this.handleInputChange
-                  }
-                />
-              </Col> */}
-              <Col className="itemTable" size="md-9 sm-12">
+              <Col size="md-9 sm-12">
                             <Row>
                                 <thead className="">
                                     <h2

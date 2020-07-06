@@ -82,7 +82,8 @@ class Results extends Component {
                                       (listing) => {
                                           return (
                                               <Col size="md-4 sm-12">
-                                                  <CardListing
+                                                <Row>
+                                                <CardListing
                                                       listingTitle={
                                                           listing.listing_title
                                                       }
@@ -104,6 +105,8 @@ class Results extends Component {
                                                           />
                                                       }
                                                   />
+                                                </Row>
+                                                  
                                               </Col>
                                           )
                                       }

@@ -4,7 +4,7 @@ import SearchForm from "./search-function";
 import { Col } from "../../components/Grid/index";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import "./search.css";
+import "../../App.css";
 import AppModal from "../../components/Modal";
 import CardListing from "../../components/Card";
 

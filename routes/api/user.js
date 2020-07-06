@@ -83,7 +83,7 @@ userRouter.post('/signup', (req, res) => {
 
 
 // ==================================================================
-// passport.authenticate('local',{session : false})
+
 userRouter.post('/signin', passport.authenticate('local', {session : false}),
 (req, res)=>{
     if(req.isAuthenticated()){

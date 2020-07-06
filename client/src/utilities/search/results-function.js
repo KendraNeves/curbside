@@ -64,8 +64,6 @@ class Results extends Component {
                 /></h3>
           </div>
           <div className="itemTable">
-            <Row>
-                <Col size="md-9 sm-12">
 
                               <Row>
                                   <thead className="">
@@ -116,8 +114,7 @@ class Results extends Component {
                               ) : (
                                       <h3>No Results to Display</h3>
                                   )}
-                          </Col>
-            </Row>
+     
           </div>
             
           

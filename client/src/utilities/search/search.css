@@ -1,6 +1,11 @@
 h2:hover{
     color: #738276;
 }
+
+.hover-pointer{
+    cursor: pointer;
+}
+  
 h3{
     width: 50%;
     margin: 0 auto;

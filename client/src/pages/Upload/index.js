@@ -7,7 +7,7 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 import Form from 'react-bootstrap/Form';
 import ImageUpload from "../../components/ImageBox/imageUpload";
 import API from "../../utilities/API";
-import Nav from '../../components/Nav';
+import NavBar from '../../components/Nav/index';
 import InputGroup from 'react-bootstrap/InputGroup'
 import "../../App.css";
 import './style.css';
@@ -97,7 +97,7 @@ function Upload() {
   }
   return (
     <div className="App">
-      <Nav />
+      <NavBar />
       <div style={{ maxWidth: '1200px', margin: '2rem auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h2>Upload Item</h2>

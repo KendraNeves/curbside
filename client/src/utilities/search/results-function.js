@@ -83,6 +83,7 @@ class Results extends Component {
                                                     className=""
                                                 >
                                                     <CardListing
+                                                        listingImage={listing.listing_image}
                                                         listingTitle={
                                                             listing.listing_title
                                                         }
@@ -115,8 +116,8 @@ class Results extends Component {
                                     )}
                                 </tbody>
                             ) : (
-                                <h3>No Results to Display</h3>
-                            )}
+                                    <h3>No Results to Display</h3>
+                                )}
                         </Col>
                     </Row>
                 </Container>

@@ -84,6 +84,8 @@ class Results extends Component {
                                               <Col size="md-4 sm-12">
                                                 <Row>
                                                 <CardListing
+
+                                                      listingImage={listing.listing_image}
                                                       listingTitle={
                                                           listing.listing_title
                                                       }

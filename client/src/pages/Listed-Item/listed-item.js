@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Image } from "react-bootstrap"
-import Map from '../../../components/Map/index';
-import Nav from '../../../components/Nav';
-import API from '../../../utilities/API';
+import Map from '../../components/Map/index';
+import Nav from '../../components/Nav';
+import API from '../../utilities/API';
 import { Row, Col } from "react-bootstrap";
 
 class ListedItem extends Component {
@@ -13,11 +13,9 @@ class ListedItem extends Component {
       listing_description: "",
       listing_condition: "",
       listing_location: "",
-      listing_latlong: null
+      listing_latlong: null,
+      listing_image: "" // Base64 representation of image
     };
-
-    // TODO: This is just a test
-    // this.state = listedItemData[0];
   }
 
   componentDidMount() {
@@ -31,16 +29,23 @@ class ListedItem extends Component {
     return (
       <>
         <Nav />
+
+        {/* ===TITLE=== */}
         <Row>
           <Col md={6}></Col>
           <Col sm={12} md={6}><h1 className={"text-center"}>{this.state.listing_title}</h1></Col>
         </Row>
-        <Row>
-          <Image width={400} fluid />
-          <p>{this.state.listing_description}</p>
+
+        {/* PIC & DESCRIPTION */}
+        <Row className="mt-5">
+          <Col md={6} className="text-center"><Image width={400} src={this.state.listing_image} fluid /></Col>
+          <Col md={6} className="text-center"><p>{this.state.listing_description}</p></Col>
         </Row>
-        <Row>
-          {map}
+
+        {/* MAP & CONDITION */}
+        <Row className="mt-5 mx-0">
+          <Col md={7}></Col>
+          <Col md={5} className="p-0">{map}</Col>
         </Row>
       </>
     );
@@ -48,6 +53,3 @@ class ListedItem extends Component {
 }
 
 export default ListedItem;
-
-
-

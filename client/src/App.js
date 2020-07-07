@@ -6,7 +6,6 @@ import Search from "./pages/Search";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Upload from "./pages/Upload";
-import Map from "./pages/Map";
 import ListedItemPage from './pages/Listed-Item/index';
 
 function App() {

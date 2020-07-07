@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../../components/Nav";
 import {Link} from "react-scroll";
 import "./style.css";
+import NavBar from './../../components/Nav/index';
 
 function Homepage() {
   return (

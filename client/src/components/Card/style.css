@@ -1,0 +1,11 @@
+
+@media (min-width: 576px){
+    .card-style {
+        width: 15em;
+    }
+}
+.card-img-top {
+    width: auto;
+    height: 10rem;
+    overflow: hidden;
+}

@@ -2,9 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import './style.css';
 function CardListing(props) {
     return (
-        <Card style={{ width: "18rem" }}>
+        <Card className="card-style">
             <Card.Img variant="top" src={props.listingImage} />
             <Card.Body>
                 <Card.Title>{props.listingTitle}</Card.Title>

@@ -6,7 +6,7 @@ const listingSchema = new Schema({
     listing_description: { type: String, required: true },
     listing_condition: String,
     listing_location: String,
-    CategoriesValue: String,
+    listing_category: String,
     listing_latlong: {
         lat: Number,
         lng: Number,

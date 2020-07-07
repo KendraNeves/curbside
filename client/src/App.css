@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+@media (min-width: 576px){
+  .row-cols-md-3:nth-child {
+      margin:5px !important;
+  }
+}
+.hover-pointer{
+  cursor: pointer;
+}

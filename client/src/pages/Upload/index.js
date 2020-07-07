@@ -16,7 +16,7 @@ function Upload() {
    const Categories = [
       { key: 1, value: "Furniture" },
       { key: 2, value: "Electronics" },
-      { key: 3, value: "Apparral" },
+      { key: 3, value: "Apparel" },
       { key: 4, value: "Toys/Games" },
       { key: 5, value: "Books" },
    ];
@@ -37,9 +37,9 @@ function Upload() {
    };
 
    const onCategoriesSelectChange = (event) => {
-      setCategoriesValue(event.currentTarget.value);
+      setFormObject({...formObject, listing_category: event.currentTarget.value});
    };
-   const [CategoriesValue, setCategoriesValue] = useState(1);
+   // const [listing_category, setlisting_category] = useState(1);
 
    useEffect(() => {
       loadListings();
@@ -85,6 +85,7 @@ function Upload() {
                   listing_description: formObject.listing_description,
                   listing_condition: formObject.listing_condition,
                   listing_location: formObject.listing_location,
+                  listing_category: formObject.listing_category,
                   listing_latlong: latlng,
                   listing_image: formObject.listing_image,
                });
@@ -172,12 +173,12 @@ function Upload() {
                            <InputGroup.Prepend>
                               <Form.Control
                                  as="select"
-                                 onChange={onCategoriesSelectChange}
+                                 onChange={handleInputChange}
                               >
                                  {Categories.map((item) => (
                                     <option
                                        key={item.key}
-                                       value={formObject.CategoriesValue}
+                                       value={formObject.listing_category}
                                     >
                                        {item.value}
                                     </option>

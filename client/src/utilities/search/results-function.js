@@ -51,7 +51,7 @@ class Results extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="search">
         <Container fluid>
           <div style={{ textAlign: 'center' }}>
                 <h2>  Listings   </h2>

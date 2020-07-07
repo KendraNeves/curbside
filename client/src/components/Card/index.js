@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 function CardListing(props) {
     return (
-        <Card style={{ width: "18rem", }}>
+        <Card style={{ width: "18rem", background:"#fdbb28", margin:"0 auto"}}>
             <Card.Img variant="top" src={props.listingImage} style={{ objectFit: "cover", width: "auto", height: "10rem", overflow: "hidden"}} />
             <Card.Body>
                 <Card.Title>{props.listingTitle}</Card.Title>

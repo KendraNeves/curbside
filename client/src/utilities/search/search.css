@@ -1,3 +1,6 @@
+.search{
+    background: #738276;
+}
 h2:hover{
     color: #738276;
 }
@@ -12,7 +15,7 @@ h3{
 }
 
 .itemTable{
-    margin: 0 auto;
+    align-items: center;
     overflow: auto;
 }
 

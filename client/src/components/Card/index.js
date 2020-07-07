@@ -5,7 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 function CardListing(props) {
     return (
         <Card style={{ width: "18rem", }}>
-            <Card.Img variant="top" src={props.listingImage} style={{ maxHeight: "20rem", objectFit: "cover" }} />
+            <Card.Img variant="top" src={props.listingImage} style={{ maxHeight: "20rem", maxWidth: "20rem", objectFit: "cover" }} />
             <Card.Body>
                 <Card.Title>{props.listingTitle}</Card.Title>
                 <Card.Text>{props.listingDescription}</Card.Text>

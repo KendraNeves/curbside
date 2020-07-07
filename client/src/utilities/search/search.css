@@ -1,5 +1,9 @@
+a{
+    color: aliceblue;
+}
+
 .search{
-    background: #738276;
+    background: #ffedd5;
 }
 h2:hover{
     color: #738276;
@@ -15,7 +19,9 @@ h3{
 }
 
 .itemTable{
-    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+    margin-right: 50px;
     overflow: auto;
 }
 

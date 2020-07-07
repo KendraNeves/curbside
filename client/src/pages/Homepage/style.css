@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .homepage {
   background-image: url(../../assets/images/homepage.jpg);
   position: fixed;

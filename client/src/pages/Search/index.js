@@ -7,8 +7,6 @@ import Results from '../../utilities/search/results-function';
 function Homepage() {
     return (
         <div className="App">
-            <head>
-            </head>
             <Nav />
             <Container fluid>
                 <Results />

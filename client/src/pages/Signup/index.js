@@ -9,44 +9,41 @@ function Signup(props) {
   const [user,setUser] =useState({email: "", password: "", role: ""});
   const [message,setMessage] = useState(null);
   let timerID = useRef(null);
-
   useEffect(()=>{
     return ()=>{
       clearTimeout(timerID)
     }
   },[]);
-
   const onChange = e =>{
     setUser({...user,[e.target.name] : e.target.value});
     console.log(user)
   }
-
   // Reset form
   const resetForm = ()=>{
     setUser({email: '', password: '', role: ''})
   }
 
-  // Displays message to user for 2 seconds; then redirects user to signin page
-  const onSubmit = e =>{
-    e.preventDefault();
-    console.log(e)
-    AuthServices.signup(user).then(data=>{
-        const { message } = data;
-        setMessage(message);
-        resetForm();
-        if(!message.msgError){
-          timerID = setTimeout(()=>{
-            props.history.push('/signin');
-          }, 2000)
-        }
-    });
+ // Displays message to user for 2 seconds; then redirects user to signin page
+ const onSubmit = e =>{
+  e.preventDefault();
+  console.log(e)
+  AuthServices.signup(user).then(data=>{
+      const { message } = data;
+      setMessage(message);
+      resetForm();
+      if(!message.msgError){
+        timerID = setTimeout(()=>{
+          props.history.push('/signin');
+        }, 2000)
+      }
+  });
   }
   
   return(
     <div className="container-fluid">
     <div className="row">
 
-        <div className="col-sm-6 px-0 d-none d-sm-block">
+    <div className="col-sm-6 px-0 d-none d-sm-block">
             <img className="login-img"/>
         </div>
         <div className="col-sm-6 login-section-wrapper">

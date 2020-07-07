@@ -2,7 +2,7 @@ a{
     color: aliceblue;
 }
 
-.search{
+.search, .upload{
     background: #ffedd5;
 }
 h2:hover{

@@ -26,10 +26,6 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/listings", {
-});
-
 const db = require('.config/index.').MONGODB_URI;
 
 mongoose.connect(db || 'mongodb://localhost/listings',{

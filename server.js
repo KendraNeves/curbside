@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require("body-parser");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -12,11 +11,9 @@ const userRouter = require('./routes/api/user');
 
 app.use("api/user", userRouter);
 
-app.use(
-  bodyParser.urlencoded({extended:false})
-);
+// Add routes, both API and view
+app.use(routes);
 
-app.use(bodyParser.json());
 
 // Cookie Parser Middleware
 app.use(cookieParser());
@@ -30,17 +27,8 @@ app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+  // const db = require('./config/index.').MONGODB_URI;
 }
-
-// User route
-const userRouter = require('./routes/api/user');
-app.use('/api/user', userRouter);
-
-// Add routes, both API and view
-app.use(routes);
-
-const db = require('.config/index.').MONGODB_URI;
-
 
 // Connect to Mongo
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/listings", {

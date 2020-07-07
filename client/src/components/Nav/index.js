@@ -9,7 +9,7 @@ import "./style.css"
 
 function NavBar(props) {
   return (
-    <header className="navigation m-4">
+    <header className="navigation p-4">
       <Navbar collapseOnSelect expand="lg" bg="custom-nav" >
         <Navbar.Brand className="p-2" href="/">Curbside</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -20,6 +20,7 @@ function NavBar(props) {
               <Route path={"/(.+)"}>
                 <Nav.Link href="/upload">Upload</Nav.Link>
                 <Nav.Link className="ml-2" href="/search">Search</Nav.Link>
+                <Nav.Link href="/"> Signout </Nav.Link>
               </Route>
             </Nav>
             <Nav>

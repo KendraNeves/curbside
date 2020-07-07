@@ -1,12 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //user Router
-// const userRouter = require('./routes/api/user');
-// app.use("api/user", userROuter);
+const userRouter = require('./routes/api/user');
+
+app.use("api/user", userRouter);
+
+app.use(
+  bodyParser.urlencoded({extended:false})
+);
+
+app.use(bodyParser.json());
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +30,11 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/listings", {
 });
 
+const db = require('.config/index.').MONGODB_URI;
+
+mongoose.connect(db || 'mongodb://localhost/listings',{
+  useNewUrlParser: true
+});
 
 //when connected successfully
 mongoose.connection.on('connected', () => {

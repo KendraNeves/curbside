@@ -84,16 +84,30 @@ userRouter.post('/signup', (req, res) => {
 
 // ==================================================================
 
-userRouter.post('/signin', passport.authenticate('local', {session : false}),
-(req, res)=>{
-    if(req.isAuthenticated()){
-        const { _id, email, role } = req.user;
-        console.log(req.user)
-        const token = signToken(_id);
-        res.cookie('access_token', token, { httpOnly: true, sameSite: true });
-        res.status(200).json({ isAuthenticated: true, user: { email, role } });
-    } 
+userRouter.get('/signin', (req, res) => {
+    const { email, password, role } = req.body;
+    User.findOne({ email }, (err, user) => {
+        if (err)
+            res.status(500).json({ message: { msgBody: "Error has occurred.", msgError: true } });
+        if (user)
+            res.status(200).json({ message: { msgBody: "You have successfully logged in!!", msgError: false } });
+        // Confirming a new user has been created
+    });
 });
+
+
+// PREVIOUS /SIGNIN ROUTE
+// userRouter.get('/signin', passport.authenticate('local', {session : false}),
+// (req, res)=>{
+//     console.log("This is REQ", req);
+//     if(req.isAuthenticated()){
+//         const { _id, email, role } = req.user;
+//         console.log(req.user)
+//         const token = signToken(_id);
+//         res.cookie('access_token', token, { httpOnly: true, sameSite: true });
+//         res.status(200).json({ isAuthenticated: true, user: { email, role } });
+//     } 
+// });
 
 
 // ====================================================================
@@ -147,4 +161,3 @@ userRouter.get('/authenticated', passport.authenticate('jwt', { session: false }
 });
 
 module.exports = userRouter;
-

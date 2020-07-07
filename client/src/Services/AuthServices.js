@@ -3,13 +3,17 @@
 export default {
     signin: user => {
         return fetch('/api/user/signin', {
-            method: 'POST',
-            body: JSON.stringify(user),
+            method: 'GET',
+            // body: JSON.stringify(user),
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(res => res.json())
-            .then(data => data)
+            .then(data=>{
+                console.log("This is DATA",data)
+                return data
+            })
+           
 
     },
 

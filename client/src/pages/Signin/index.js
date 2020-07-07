@@ -23,7 +23,11 @@ function Signin(props) {
     // Middleware takes action
     AuthServices.signin(user)
     .then(data=>{
+      console.log("CHECKING FOR AUTHENTICATION")
         const { isAuthenticated, user, message } = data;
+        console.log(data)
+        console.log(isAuthenticated)
+
         if (isAuthenticated) {
           authContext.setUser(user);
           authContext.setIsAuthenicated(isAuthenticated);
@@ -31,6 +35,7 @@ function Signin(props) {
         }
         else {
           setMessage(message)
+          props.history.push('/search');
         }
       });
   };

@@ -8,8 +8,8 @@ const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 Geocode.setApiKey(REACT_APP_API_KEY);
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '360px',
+  height: '360px'
 };
 
 export default class Map extends Component {

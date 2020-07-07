@@ -20,7 +20,7 @@ function NavBar(props) {
               <Route path={"/(.+)"}>
                 <Nav.Link href="/upload">Upload</Nav.Link>
                 <Nav.Link className="ml-2" href="/search">Search</Nav.Link>
-                <Nav.Link href="/">Signout</Nav.Link>
+                <Nav.Link href="/"> Signout </Nav.Link>
               </Route>
             </Nav>
             <Nav>

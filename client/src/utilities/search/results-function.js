@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import "../../App.css";
 import AppModal from '../../components/Modal';
+import Button from 'react-bootstrap/Button';
 import CardListing from '../../components/Card';
 
 class Results extends Component {
@@ -22,7 +23,7 @@ class Results extends Component {
             listings: res.data,
             listingSort: res.data
         })).catch(err => console.log(err))
-        
+
     }
 
     sortByName = () => {
@@ -49,51 +50,46 @@ class Results extends Component {
     render() {
         return (
             <div>
-    <Container fluid>
-        <Row>
-            <Col size="md-3 sm-12">
-                <SearchForm
-                    listing={this.state.listings}
-                    handleSearch={this.handleSearch}
+                <Container fluid>
+                    <Row>
+                        <Col size="md-3 sm-12">
+                            <SearchForm
+                                listing={this.state.listings}
+                                handleSearch={this.handleSearch}
 
-                    handleInputChange={this.handleInputChange} />
-            </Col>
-        <Col size="md-9 sm-12">
-          <thead className="">
-              <Row className=" sticky-top">
-                  <h2 className="hover-pointer heading" onClick={this.sortByName}>Date Added</h2>
-
-
-              </Row>
-          </thead>
-          {this.state.listings.length ? (
-          <tbody className="">
-              {this.state.listingSort.map(listing => (
-                  console.log(listing),
-                  <Row key={listing._id} className="">
+                                handleInputChange={this.handleInputChange} />
+                        </Col>
+                        <Col size="md-9 sm-12">
+                            <thead className="">
+                                <Row className=" sticky-top">
+                                    <h2 className="hover-pointer heading" onClick={this.sortByName}>Date Added</h2>
+                                </Row>
+                            </thead>
+                            {this.state.listings.length ? (
+                                <tbody className="">
+                                    {this.state.listingSort.map(listing => (
+                                        console.log(listing),
+                                        <Row key={listing._id} className="">
 
 
-                      <CardListing
-                      listingTitle={listing.listing_title}
-                      listingDescription= {listing.listing_description}
-                      location={listing.listing_location}
-                      modalButton={
-                      
-                      <AppModal
-                      content={listing.listing_title}
-                      description={listing.listing_description}
-                      location={listing.listing_location}
-                      />}/>
+                                            <CardListing
+                                                listingId={listing._id}
+                                                listingTitle={listing.listing_title}
+                                                listingDescription={listing.listing_description}
+                                                location={listing.listing_location}
+                                                modalButton={
 
-                  </Row>
-              ))}
-          </tbody>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
-          </Col>
-          </Row>
-      </Container>
+                                                    <Button className="btn-custom" variant="custom"><a href={"/listings/" + listing._id}>View</a></Button>} />
+
+                                        </Row>
+                                    ))}
+                                </tbody>
+                            ) : (
+                                    <h3>No Results to Display</h3>
+                                )}
+                        </Col>
+                    </Row>
+                </Container>
             </div >
         )
     }

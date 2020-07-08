@@ -12,3 +12,22 @@
   letter-spacing: 3px;
   padding-right: 3rem;
 }
+
+#sign-in-link, #sign-up-link {
+  color: black;
+  font-family: "Titillium Web";
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+#sign-up-link:hover {
+  color: white;
+}
+
+#sign-in-link:hover {
+  color: white;
+}
+
+#brand-name:hover {
+  color: white;
+}

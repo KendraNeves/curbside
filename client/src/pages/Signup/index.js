@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
-import AuthServices from "../../Services/AuthServices";
-import Message from "../../components/Message/index";
+import React, {useState, useRef, useEffect} from "react";
+import AuthServices from '../../Services/AuthServices';
+import Message from '../../components/Message/index';
 import "./style.css";
 // import signup_img from "../../assets/images/img1.png";
 import {Link} from "react-router-dom";

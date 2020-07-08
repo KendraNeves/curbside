@@ -123,16 +123,18 @@ body, html {
 }
 
 .login-wrapper-footer-text {
-  font-size: 16px;
-  color: #000;
-  margin-bottom: 0;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .login-title {
+  text-align: center;
+  font-family: "Titillium Web";
   font-size: 30px;
   color: #000;
   font-weight: bold;
   margin-bottom: 25px;
+  letter-spacing: 3px;
 }
 
 .login-img {

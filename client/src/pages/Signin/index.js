@@ -82,7 +82,8 @@ function Signin(props) {
             </form>
             {message ? <Message message={message} /> : null}
             <p className="login-wrapper-footer-text">
-              Don't have an account?{" "}
+              Don't have an account?
+              <br></br>
               <Link id="signin-link" to="/signup">
                 Register here
               </Link>

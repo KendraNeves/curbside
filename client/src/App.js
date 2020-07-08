@@ -7,6 +7,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Upload from "./pages/Upload";
 import ListedItemPage from './pages/Listed-Item/index';
+import "./index.css";
 
 function App() {
   const { user,setUser,isAuthenicated,setIsAuthenicated } = useContext(AuthContext);

@@ -4,6 +4,10 @@ body {
   min-height: 100vh;
 }
 
+body, html {
+  display: grid;
+}
+
 .container-fluid {
   min-height: 100vh;
   align-content: stretch;
@@ -14,22 +18,13 @@ body {
   margin: 0;
 }
 
-.brand-wrapper {
-  padding-top: 7px;
-  padding-bottom: 8px;
-}
-
-.brand-wrapper .logo {
-  height: 25px;
-}
-
 .login-section-wrapper {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  padding: 68px 100px;
+  margin: auto;
+  display: grid;
+}
+
+.brand-wrapper, .login-wrapper {
+  margin: auto;
 }
 
 @media (max-width: 991px) {

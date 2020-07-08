@@ -1,7 +1,9 @@
 a{
-    color: aliceblue;
+    color: black;
 }
-
+a:hover{
+    color: rgb(128, 57, 57);
+}
 .search, .upload{
     background: #ffedd5;
 }

@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import "../../utilities/search/search.css"
 function CardListing(props) {
   return (
     <Card style={{ width: "18rem", }}>

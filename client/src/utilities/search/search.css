@@ -1,3 +1,10 @@
+a{
+    color: aliceblue;
+}
+
+.search, .upload{
+    background: #ffedd5;
+}
 h2:hover{
     color: #738276;
 }
@@ -12,7 +19,9 @@ h3{
 }
 
 .itemTable{
+    width: 75%;
     margin: 0 auto;
+    margin-right: 50px;
     overflow: auto;
 }
 

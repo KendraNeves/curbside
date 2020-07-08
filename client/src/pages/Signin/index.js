@@ -39,32 +39,11 @@ function Signin(props) {
       });
   };
 
-    return (
-      <div className="container-fluid">
-                <div className="row">
-
-<div className="col-sm-6 px-0 d-none d-sm-block">
-    <img className="login-img" />
-</div>
-<div className="col-sm-6 login-section-wrapper">
-    <div className="brand-wrapper">
-      <h4><a className="log-brand" href="/">CURBSIDE  </a></h4>
-    {/* <img src="assets/images/logo.svg" alt="logo" className="logo" /> */}
-    </div>
-    <div className="login-wrapper my-auto">
-    <h1 className="login-title">Log in</h1>
-    <form onSubmit={onSubmit} className="formbox" >
-        <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input type="email" className="form-control" id="email" value={user.email} onChange={onChange} name="email" placeholder="Email..." />
-        {/* <input className="form-input"
-            type="text"
-            id="email"
-            name="email"
-            placeholder="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-        /> */}
+  return (
+    <div className="container-fluid">
+      <div className="row" id="log-in-row">
+        <div className="col-sm-6 px-0 d-none d-sm-block">
+          <img className="login-img" />
         </div>
         <div className="form-group mb-4">
         <label htmlFor="password">Password</label>

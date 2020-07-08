@@ -10,10 +10,9 @@ body, html {
 
 .container-fluid {
   min-height: 100vh;
-  align-content: stretch;
 }
 
-.row {
+#log-in-row {
   min-height: 100vh;
   margin: 0;
 }

@@ -41,10 +41,9 @@ function Signup(props) {
   
   return(
     <div className="container-fluid">
-    <div className="row">
-
-    <div className="col-sm-6 px-0 d-none d-sm-block">
-            <img className="login-img"/>
+      <div className="row" id="sign-up-row">
+        <div className="col-sm-6 px-0 d-none d-sm-block">
+          <img className="login-img" />
         </div>
         <div className="col-sm-6 login-section-wrapper">
             <div className="brand-wrapper">

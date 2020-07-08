@@ -4,10 +4,15 @@
   height: 100vh;
 }
 
+#sign-up-row {
+  min-height: 100vh;
+  margin: 0;
+}
+
 .log-brand {
   color: black;
   font-family: "Titillium Web";
-  font-size: 35px;
+  font-size: 60px;
   letter-spacing: 5px;
   padding: .5rem;
 }

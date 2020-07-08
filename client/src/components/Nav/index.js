@@ -11,7 +11,7 @@ function NavBar(props) {
   return (
     <header className="navigation p-4">
       <Navbar collapseOnSelect expand="lg" bg="custom-nav" >
-        <Navbar.Brand className="p-2" href="/">Curbside</Navbar.Brand>
+        <Navbar.Brand className="p-2" id="brand-name" href="/">Curbside</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <BrowserRouter >
@@ -26,8 +26,8 @@ function NavBar(props) {
             <Nav>
               {/* vvv Sign in and Sign up only appear on the homepage */}
               <Route exact path={"/"}>
-                <Nav.Link className="mr-2" href="/signin">Sign In</Nav.Link>
-                <Nav.Link className="" href="/signup">Sign Up</Nav.Link>
+                <Nav.Link className="mr-2" id="sign-in-link" href="/signin">Sign In</Nav.Link>
+                <Nav.Link className="" id="sign-up-link" href="/signup">Sign Up</Nav.Link>
               </Route>
             </Nav>
           </BrowserRouter>

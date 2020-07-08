@@ -1,0 +1,145 @@
+body {
+  font-family: "Karla", sans-serif;
+  background-color: white;
+  min-height: 100vh;
+}
+
+body, html {
+  display: grid;
+}
+
+.container-fluid {
+  min-height: 100vh;
+}
+
+#log-in-row {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.login-section-wrapper {
+  margin: auto;
+  display: grid;
+}
+
+.brand-wrapper, .login-wrapper {
+  margin: auto;
+}
+
+@media (max-width: 991px) {
+  .login-section-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .login-section-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+  }
+}
+
+.login-wrapper {
+  width: 300px;
+  max-width: 120%;
+  /* margin-left: 100px; */
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 575px) {
+  .login-wrapper {
+    width: 100%;
+  }
+}
+
+.login-wrapper label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #b0adad;
+}
+
+.login-wrapper .form-control {
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+  border-radius: 0;
+  padding: 9px 5px;
+  min-height: 40px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.login-wrapper .form-control::-webkit-input-placeholder {
+  color: #b0adad;
+}
+
+.login-wrapper .form-control::-moz-placeholder {
+  color: #b0adad;
+}
+
+.login-wrapper .form-control:-ms-input-placeholder {
+  color: #b0adad;
+}
+
+.login-wrapper .form-control::-ms-input-placeholder {
+  color: #b0adad;
+}
+
+.login-wrapper .form-control::placeholder {
+  color: #b0adad;
+}
+
+.login-wrapper .login-btn {
+  padding: 13px 20px;
+  background-color: #fdbb28;
+  border-radius: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.login-wrapper .login-btn:hover {
+  border: 1px solid #fdbb28;
+  background-color: #fff;
+  color: #fdbb28;
+}
+
+.login-wrapper a.forgot-password-link {
+  color: #080808;
+  font-size: 14px;
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 54px;
+}
+
+@media (max-width: 575px) {
+  .login-wrapper a.forgot-password-link {
+    margin-bottom: 16px;
+  }
+}
+
+.login-wrapper-footer-text {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.login-title {
+  text-align: center;
+  font-family: "Titillium Web";
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+}
+
+.login-img {
+  background: url("../../assets/images/img4.png");
+  min-width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}

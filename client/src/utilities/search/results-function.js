@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import "../../App.css";
 import AppModal from "../../components/Modal";
 import CardListing from "../../components/Card";
+import Button from "react-bootstrap/Button";
 
 class Results extends Component {
   state = {
@@ -85,6 +86,9 @@ class Results extends Component {
                         <Col size="md-4 sm-12">
                           <Row>
                             <CardListing
+                              listingId={
+                                listing._id
+                              }
                               listingImage={
                                 listing.listing_image
                               }
@@ -98,17 +102,19 @@ class Results extends Component {
                                 listing.listing_location
                               }
                               modalButton={
-                                <AppModal
-                                  content={
-                                    listing.listing_title
-                                  }
-                                  description={
-                                    listing.listing_description
-                                  }
-                                  location={
-                                    listing.listing_location
-                                  }
-                                />
+                                <Button
+                                  className="btn-custom"
+                                  variant="custom"
+                                >
+                                  <a
+                                    href={
+                                      "/listings/" +
+                                      listing._id
+                                    }
+                                  >
+                                    View
+                                  </a>
+                                </Button>
                               }
                             />
                           </Row>

@@ -1,3 +1,12 @@
+a{
+    color: black;
+}
+a:hover{
+    color: rgb(128, 57, 57);
+}
+.search, .upload{
+    background: #ffedd5;
+}
 h2:hover{
     color: #738276;
 }
@@ -12,7 +21,9 @@ h3{
 }
 
 .itemTable{
+    width: 75%;
     margin: 0 auto;
+    margin-right: 50px;
     overflow: auto;
 }
 

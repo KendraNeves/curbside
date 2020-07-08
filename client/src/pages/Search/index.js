@@ -6,7 +6,7 @@ import Results from '../../utilities/search/results-function';
 
 function Homepage() {
     return (
-        <div className="App">
+        <div className="search">
             <Nav />
             <Container fluid>
                 <Results />

@@ -39,7 +39,7 @@ function Signin(props) {
 
   return (
     <div className="container-fluid">
-      <div className="row">
+      <div className="row" id="log-in-row">
         <div className="col-sm-6 px-0 d-none d-sm-block">
           <img className="login-img" />
         </div>

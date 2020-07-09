@@ -20,7 +20,7 @@ var mySchema = mongoose.Schema({
 });
 
 //login
-router.post('login', function(reg, res) {
+router.post('signin', function(reg, res) {
   var userEmail = req.body.username;
   var password = req.body.password;
 
@@ -38,7 +38,7 @@ router.post('login', function(reg, res) {
 
 
 //User routes
-router.post('/register', function (req, res){
+router.post('/signup', function (req, res){
   var userEmail = req.body.username;
   var password = req.body.password;
 

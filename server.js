@@ -43,7 +43,7 @@ mongoose.connection.on('error', err => {
 });
 
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   res.send(req.cookies);
 })
 

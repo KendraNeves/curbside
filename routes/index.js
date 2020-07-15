@@ -8,7 +8,7 @@ var mongoose = require ('mongoose');
 router.use("/api", apiRoutes);
 
 router.use(function(req, res, next) {
-  res.sendFile(path.join(__dirname, "../../build/index.html")); //   ../client/build/index.html
+  res.sendFile(path.join(__dirname, "../../client/build/index.html")); //   ../client/build/index.html
   next();
 });
 

@@ -7,9 +7,10 @@ var mongoose = require("mongoose");
 // API Routes
 router.use("/api", apiRoutes);
 
-router.use(function (req, res, next) {
-  res.sendFile(path.join(__dirname, "../../client/build/index.html")); //   ../client/build/index.html
-  next();
+router.get('*', function (req, res) {
+  console.log(Date.now() + ': ' + req.url);
+  res.sendFile(path.join(__dirname, "../client/build/index.html")); //   ../client/build/index.html
+  console.log(path.join(__dirname, "../client/build/index.html"))
 });
 
 //schema
@@ -50,15 +51,6 @@ router.post("/register", function (req, res) {
       return res.status(500).send();
     }
     res.status(200).send();
-  });
-});
-
-//Catchall to use React for page requests
-router.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
   });
 });
 

@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.use(express.static("client/public"));
+  const path = require('path');
+  app.use(express.static(__dirname + "/client/build"));
 }
 
 // User route
@@ -43,8 +43,9 @@ mongoose.connection.on('error', err => {
 });
 
 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
   res.send(req.cookies);
+  next();
 })
 
 app.listen(PORT, function () {

@@ -8,9 +8,7 @@ var mongoose = require("mongoose");
 router.use("/api", apiRoutes);
 
 router.get('*', function (req, res) {
-  console.log(Date.now() + ': ' + req.url);
-  res.sendFile(path.join(__dirname, "../client/build/index.html")); //   ../client/build/index.html
-  console.log(path.join(__dirname, "../client/build/index.html"))
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 //schema

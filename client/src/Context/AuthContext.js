@@ -22,7 +22,7 @@ export default ({ children })=>{
     // Returns Global State values to App
     return(
         <div>
-            {!isLoaded ? <h1>Loading</h1> : 
+            {!isLoaded ? <h1></h1> : 
             <AuthContext.Provider value={{user,setUser,isAuthenticated,setIsAuthenticated}}>
                 { children }
             </AuthContext.Provider>}

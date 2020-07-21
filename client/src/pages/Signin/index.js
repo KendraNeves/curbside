@@ -39,22 +39,27 @@ function Signin(props) {
       });
   };
 
-  return (
-    <div className="container-fluid">
-      <div className="row" id="log-in-row">
-        <div className="col-sm-6 px-0 d-none d-sm-block">
-          <img className="login-img" />
+    return (
+      <div className="container-fluid">
+                <div className="row" id="log-in-row">
+
+<div className="col-sm-6 px-0 d-none d-sm-block">
+    <img className="login-img" />
+</div>
+<div className="col-sm-6 login-section-wrapper">
+    <div className="brand-wrapper">
+      <h4><a className="log-brand" href="/">CURBSIDE  </a></h4>
+    </div>
+    <div className="login-wrapper my-auto">
+    <h1 className="login-title">Log in</h1>
+    <form onSubmit={onSubmit} className="formbox" >
+        <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input type="email" className="form-control" id="email" value={user.email} onChange={onChange} name="email" placeholder="Email..." />
         </div>
         <div className="form-group mb-4">
         <label htmlFor="password">Password</label>
         <input type="password" className="form-control" value={user.password} onChange={onChange} id="password" name="password" placeholder="Password..."/>
-        {/* <input className="form-input"
-            placeholder="password"
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-        /> */}
         </div>
         <input className="btn btn-dark" 
         type="submit" />

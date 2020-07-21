@@ -1,91 +1,104 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Curbside
 
-## Available Scripts
+## Description
+            
+Curbside is an application that allows users to get rid of personal items when moving, without the hassel of selling, throwing the items away or even meeting the people who wants to claim the item. By listing the item with a photo, description and location on the Curbside App, other users will be show interest in these items and are able to pick them up from the curbside location the owner has provided, which will be displayed using a 1 mile radius on the map. 
 
-In the project directory, you can run:
 
-### `npm start`
+![](client\src\assets\images\Front%20page.png)
+
+## Deployed app: https://curbsidedeployment.herokuapp.com/
+
+## User story
+
+``` 
+    Curbside demonstrates a full stack MERN application.
+
+    User story # 1:
+        As a person who is trying to get rid of personal items before moving
+        I want an app that allows me to upload and list my personal items
+        So that other users can locate where my items are on the map and grab them from the curbside with little interaction.  
+
+    User story # 2:
+        As a person who wants to acquire free hand me down items
+        I want an app that shows a listing of items with their locations, that  people are giving away
+        So that i can pick them up from the curbside with little interaction
+
+```
+            
+## Table of Contents
+            
+* [Installation](#Installation)
+* [Usage](#Usage) 
+* [Contributing](#Contributing) 
+* [License](#License) 
+* [Test](#Test)
+            
+        
+## Installation
+            
+**Step 1 - Clone my repo using the command line below.**
+```
+    git clone 
+```
+**Step 2 - Change directory to the cloned repo folder.**
+```
+    cd curbside
+```
+**Step 3 - Install all required NPM packages.**
+```
+
+    npm i to backend folder
+
+    npm i axios react-bootstrap bootstrap to client folder
+
+    npm i @react-google-maps/api  &  react-geocode  in client/package.json
+
+    npm install --save-dev style-loader in client
+
+    npm install react-dropzone --save in client
+
+    npm i --save @fortawesome/fontawesome-svg-core in client
+
+    npm i --save @fortawesome/free-solid-svg-icons in client
+
+    npm i --save @fortawesome/react-fontawesome in client
+
+    npm install multer --save in backend
+```
+**Step 4 - Start the application server using the command line below**
+```
+npm start
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+            
+## Usage
+            
+node server.js
+            
+            
+## Contributing
 
-### `node modules`
-
-
-npm i to backend folder
-
-npm i axios react-bootstrap bootstrap to client folder
-
-npm i @react-google-maps/api  &  react-geocode  in client/package.json
-
-
-npm install --save-dev style-loader in client
-
-npm install react-dropzone --save in client
-
-npm i --save @fortawesome/fontawesome-svg-core in client
-
-npm i --save @fortawesome/free-solid-svg-icons in client
-
-npm i --save @fortawesome/react-fontawesome in client
-
-npm install multer --save in backend
+![](client\src\assets\images\Contribution%20photo.png)
+            
+[![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
+[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
 
 
-### `npm test`
+ 
+## License
+            
+MIT
+        
+## Test
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+none
+        
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

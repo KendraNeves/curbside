@@ -69,11 +69,9 @@ Curbside is an application that allows users to get rid of personal items when m
 **Step 4 - Start the application server using the command line below**
 ```
 npm start
-
+```
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-```
             
 ## Usage
             

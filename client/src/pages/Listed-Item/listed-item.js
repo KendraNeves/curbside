@@ -39,7 +39,7 @@ class ListedItem extends Component {
         {/* PIC & DESCRIPTION */}
         <Row className="mt-5">
           <Col md={6} className="text-center"><Image width={400} src={this.state.listing_image} fluid /></Col>
-          <Col md={6} className="text-center"><p>{this.state.listing_description}</p></Col>
+          <Col md={6} className="text-center pr-5 pt-3"><p>{this.state.listing_description}</p></Col>
         </Row>
 
         {/* MAP & CONDITION */}

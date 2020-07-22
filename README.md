@@ -88,19 +88,19 @@ node server.js
 [![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi@gmail.com)
 
 [![](https://img.shields.io/badge/gitHub-KendraNeves-blue?style=plastic)](https://github.com/KendraNeves) | 
-[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+[![](https://img.shields.io/badge/email-kendraneves@gmail.com-purple?style=plastic)](mailto:kendraneves@gmail.com)
 
 [![](https://img.shields.io/badge/gitHub-vsaleem-blue?style=plastic)](https://github.com/vsaleem) | 
-[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:vic.saleem@gmail.com)
+[![](https://img.shields.io/badge/email-vic.saleem@gmail.com-purple?style=plastic)](mailto:vic.saleem@gmail.com)
 
-[![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
-[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+[![](https://img.shields.io/badge/gitHub-dsarra1018-blue?style=plastic)](https://github.com/dsarra1018) | 
+[![](https://img.shields.io/badge/email-adriansarra18@gmail.com-purple?style=plastic)](mailto:adriansarra18@gmail.com)
 
-[![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
-[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+[![](https://img.shields.io/badge/gitHub-ricardoshaffer-blue?style=plastic)](https://github.com/ricardoshaffer) | 
+[![](https://img.shields.io/badge/email-ricardo.ramiro.shaffer@gmail.com-purple?style=plastic)](mailto:ricardo.ramiro.shaffer@gmail.com)
 
-[![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
-[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+[![](https://img.shields.io/badge/gitHub-RobWongus-blue?style=plastic)](https://github.com/RobWongus) | 
+[![](https://img.shields.io/badge/email-rob_wo@yahoo.com-purple?style=plastic)](mailto:rob_wo@yahoo.com)
 
 
 

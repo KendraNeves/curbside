@@ -84,7 +84,7 @@ userRouter.post('/signup', (req, res) => {
 
 // ==================================================================
 
-userRouter.post('/signin', (req, res) => {
+userRouter.get('/signin', (req, res) => {
     const { email, password, role } = req.body;
     User.findOne({ email }, (err, user) => {
         if (err)

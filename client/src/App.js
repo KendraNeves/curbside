@@ -10,23 +10,25 @@ import ListedItemPage from "./pages/Listed-Item/index";
 import "./index.css";
 
 function App() {
-  const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { user, setUser, isAuthenicated, setIsAuthenicated } = useContext(
+    AuthContext
+  );
   console.log(user);
-  console.log(isAuthenticated);
+  console.log(isAuthenicated);
   return (
     <Router>
-      <Switch>
-        <Route exact path={["/", "/homepage"]} component={Homepage} />
-        <Route path="/search" component={Search} />
-        <Route path="/signin" component={Signin} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/upload" component={Upload} />
-        <Route
-          exact
-          path="/listings/:listing_id"
-          render={(props) => <ListedItemPage listing_id={props.match.params.listing_id} />}
-        />
-      </Switch>
+      <div>
+        <Switch>
+          <Route exact path={["/", "/homepage"]} component={Homepage} />
+          <Route path="/map" component={Map} />
+          <Route path="/search" component={Search} />
+          <Route path="/signin" component={Signin} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/upload" component={Upload} />
+          <Route exact path="/listings/:listing_id" render={(props) => (<ListedItemPage listing_id={props.match.params.listing_id} />)}
+          />
+        </Switch>
+      </div>
     </Router>
   );
 }

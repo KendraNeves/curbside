@@ -17,8 +17,7 @@ app.use(bodyParser.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  const path = require('path');
-  app.use(express.static(__dirname + "/client/build"));
+  app.use(express.static("client/build"));
 }
 
 // User route
@@ -34,20 +33,19 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/listings", {
 
 //when connected successfully
 mongoose.connection.on('connected', () => {
-  console.log('Established Mongoose Default Connection');
+    console.log('Established Mongoose Default Connection');
 });
 
 //when connection throws an error
-mongoose.connection.on('error', err => {
+mongoose.connection.on('error', err =>{
   console.log('Mongoose Default Connection Error : ' + err);
 });
 
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res)=>{
   res.send(req.cookies);
-  next();
 })
 
-app.listen(PORT, function () {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+app.listen(PORT, function() {
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

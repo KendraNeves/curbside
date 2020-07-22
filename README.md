@@ -5,7 +5,7 @@
 Curbside is an application that allows users to get rid of personal items when moving, without the hassel of selling, throwing the items away or even meeting the people who wants to claim the item. By listing the item with a photo, description and location on the Curbside App, other users will be show interest in these items and are able to pick them up from the curbside location the owner has provided, which will be displayed using a 1 mile radius on the map. 
 
 
-![](client\src\assets\images\Front%20page.png)
+![](client/src/assets/images/Front%20page.png)
 
 ## Deployed app: https://curbsidedeployment.herokuapp.com/
 
@@ -82,7 +82,7 @@ node server.js
             
 ## Contributing
 
-![](client\src\assets\images\Contribution%20photo.png)
+![](client/src/assets/images/Contribution%20photo.png)
             
 [![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
 [![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi@gmail.com)

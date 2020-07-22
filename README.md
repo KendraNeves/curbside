@@ -83,7 +83,24 @@ node server.js
 ![](client\src\assets\images\Contribution%20photo.png)
             
 [![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
+[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi@gmail.com)
+
+[![](https://img.shields.io/badge/gitHub-KendraNeves-blue?style=plastic)](https://github.com/KendraNeves) | 
 [![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+
+[![](https://img.shields.io/badge/gitHub-vsaleem-blue?style=plastic)](https://github.com/vsaleem) | 
+[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:vic.saleem@gmail.com)
+
+[![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
+[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+
+[![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
+[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+
+[![](https://img.shields.io/badge/gitHub-makiwumi-blue?style=plastic)](https://www.github.com/makiwumi) | 
+[![](https://img.shields.io/badge/email-mfakiwumi1992@yahoo.com-purple?style=plastic)](mailto:mfakiwumi1992@yahoo.com)
+
+
 
 
  

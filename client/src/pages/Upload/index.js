@@ -10,7 +10,7 @@ import API from "../../utilities/API";
 import Nav from "../../components/Nav";
 import InputGroup from "react-bootstrap/InputGroup";
 import "../../App.css";
-import './style.css';
+import "./style.css";
 
 function Upload() {
    const Categories = [

@@ -16,11 +16,7 @@ function Upload() {
    const Categories = [
       { key: 1, value: "Furniture" },
       { key: 2, value: "Electronics" },
-<<<<<<< HEAD
       { key: 3, value: "Apparel" },
-=======
-      { key: 3, value: "Apparral" },
->>>>>>> e15a0a42... Revert "Delete index.js"
       { key: 4, value: "Toys/Games" },
       { key: 5, value: "Books" }
    ]
@@ -35,7 +31,7 @@ function Upload() {
       listing_latlong: null
    });
 
-   
+
    const setUploadImage = (image) => {
       setFormObject({ ...formObject, listing_image: image });
    };
@@ -139,12 +135,12 @@ function Upload() {
                            })}
                         </List>
                      ) : (
-                        <h3>No Results to Display</h3>
-                     )}
+                           <h3>No Results to Display</h3>
+                        )}
                   </Col>
                   <Col size="md-6 input">
                      <form>
-                        <ImageUpload setUploadImage={setUploadImage} image={formObject.listing_image}/>
+                        <ImageUpload setUploadImage={setUploadImage} image={formObject.listing_image} />
                         <br />
                         <br />
                         <Input

@@ -38,7 +38,7 @@ export default {
     isAuthenticated: () => {
         return fetch('/api/user/authenticated')
             .then(res => {
-                if (res.status == 200)
+                if (res.status === 200)
                     return { isAuthenticated: true };
 
                 // return res.json().then(data=>data);

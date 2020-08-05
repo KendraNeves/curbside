@@ -43,7 +43,7 @@ function Signup(props) {
     <div className="container-fluid">
       <div className="row" id="sign-up-row">
         <div className="col-sm-6 px-0 d-none d-sm-block">
-          <img className="login-img" />
+          <img className="login-img" alt="" />
         </div>
         <div className="col-sm-6 login-section-wrapper">
           <div className="brand-wrapper">
